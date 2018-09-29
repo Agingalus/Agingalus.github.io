@@ -1,0 +1,28 @@
+<html lang = "en">
+    <head>
+        <meta  charset="UTF-8">
+        <title>
+         My favorate movie
+        </title>
+    </head>
+    <body>
+        <h1>
+        Solomon Kane
+        </h1>
+            <h2>
+                Directed by <em>Michael J. Bassett</em>
+            </h2>
+        Directed by <em>Michael J. Bassett</em>
+        <hr/>
+        <p>
+            After a raid on a fortress for its treasue, instead of just finding the treasue he finds 
+            the <strong>Devil</strong> waiting to claim his soul.
+             He bairly escapes with his life and now is trying to find a way to redeem his soul.<br/> 
+             As he is trying to figue out what to do with his life as changed person, he meet a famliy 
+             and tags along with them for a while. When the family gets attacked and the daughter gets 
+             captured, he promises the father promises that his soul will be redeemed if he saves his daughter.
+              Now his jouney to redeem his soul begins...
+
+        </p>
+    </body>
+</html>
