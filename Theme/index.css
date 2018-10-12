@@ -1,0 +1,14 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 133%;
+    margin-left: 150px;
+    margin-right: 100px;
+    background-color: cadetblue;
+     tab-size: 20px ;
+     
+    
+}
+.tab {text-indent: 40px};
+p{
+    line-height: 1.2em
+}
