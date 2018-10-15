@@ -4,11 +4,11 @@ button{
     color: greenyellow;
     text-align: center;
     font-size: 16px;
-    text-align: center;
+    
 }
 body{
     background-color: #842EC3;
 }
-h1{
+h1 .bob{
     text-align: center
 }
