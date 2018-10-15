@@ -1,0 +1,14 @@
+button{
+    background-color: blue;
+    border: 2px black thick;
+    color: greenyellow;
+    text-align: center;
+    font-size: 16px;
+    text-align: center;
+}
+body{
+    background-color: #842EC3;
+}
+h1{
+    text-align: center
+}
