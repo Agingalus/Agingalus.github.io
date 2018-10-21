@@ -3,12 +3,49 @@ body{
     font-size: 133%;
     margin-left: 150px;
     margin-right: 100px;
-    background-color: cadetblue;
+    background-color: rgba(1, 26, 13, 0.918);
      tab-size: 20px ;
      
     
 }
 .tab {text-indent: 40px};
-p{
-    line-height: 1.2em
+
+
+img#left{
+    
+    float: left;
+}
+figure{
+    font-size: 70%;
+}
+
+header{
+    text-align: center;
+    background-color: rgba(35, 16, 158, 0.774);
+    
+}
+header p{
+    font-weight: bold;
+    color: rgb(13, 136, 19);
+}
+.byline{
+    font-style: italic;
+    font-size: 65%;
+    
+}
+main{
+    background-color: rgb(84, 28, 138);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+footer{
+    background-color: darkslateblue;
+    text-align: center;
+  
+}
+a{
+    color: aliceblue;
+}
+#figcent{
+    text-align: center;
 }
