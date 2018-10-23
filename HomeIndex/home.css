@@ -1,0 +1,13 @@
+body
+{
+    font-size: 133%;
+    font-family: sans-serif;
+background-color: darkgreen;
+margin-left: 150px;
+}
+nav ul{
+    list-style-type: none ;
+}
+a{
+    color: gold;
+}

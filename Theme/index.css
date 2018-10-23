@@ -1,3 +1,6 @@
+a{
+    color: aliceblue;
+}
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 133%;
@@ -8,16 +11,31 @@ body{
      
     
 }
-.tab {text-indent: 40px};
-
-
-img#left{
+.byline{
+    font-style: italic;
+    font-size: 65%;
     
-    float: left;
 }
-figure{
+figcaption{
     font-size: 70%;
+    text-align: center;
+    
 }
+    
+
+footer{
+    background-color: darkslateblue;
+    text-align: center;
+  
+}
+footer ul{
+    list-style-type: none;
+}
+
+#figcent{
+    text-align: center;
+}
+
 
 header{
     text-align: center;
@@ -28,24 +46,33 @@ header p{
     font-weight: bold;
     color: rgb(13, 136, 19);
 }
-.byline{
-    font-style: italic;
-    font-size: 65%;
+img#left{
     
+    float: left;
 }
+
 main{
     background-color: rgb(84, 28, 138);
     padding-left: 10px;
     padding-right: 10px;
 }
-footer{
-    background-color: darkslateblue;
-    text-align: center;
-  
+nav{
+    border: 1px lightblue solid;
+    background: rgb(63, 63, 150)
+    
+
 }
-a{
-    color: aliceblue;
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding: 8px;
+    margin: -1px 0px 0px 0px;
 }
-#figcent{
-    text-align: center;
+nav li{
+    display: inline;
+    padding: 8px;
+}
+.tab{
+    text-indent: 40px;
 }
