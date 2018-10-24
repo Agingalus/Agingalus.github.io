@@ -1,18 +1,45 @@
+aside{
+    background-color: blueviolet;
+    float: right;
+    max-width: 80px;
+    border: solid gold;
+    padding: 10px;
+    margin: 20px 5px;
+    border-radius: 3px;
+    font-style: initial;
+    font-family: fantasy;
+    font-size: 10px;
+}
 button{
     background-color: blue;
     border: 2px solid black;
     color: greenyellow;
     text-align: center;
     font-size: 16px;
+
     
 }
 body{
     background-color: #842EC3;
 }
+button.testButton{
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    border: double rebeccapurple 5px;
+    
+}
+button.testButton:hover{
+ background-color: hotpink;
+}
 h1 .bob{
     text-align: center;
     font-size: 150%;
     
+}
+button.marginbutton{
+    margin:5px;
+
 }
 h1#number1
 {
