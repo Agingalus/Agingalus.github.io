@@ -84,6 +84,8 @@ main{
     background-color: rgb(84, 28, 138);
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 15px;
 }
 nav{
     border: 1px lightblue solid;
