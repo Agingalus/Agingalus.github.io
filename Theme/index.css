@@ -15,10 +15,11 @@ aside{
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 133%;
-    margin-left: 150px;
-    margin-right: 100px;
+    margin-left: 175px;
+    margin-right: 150px;
     background-color: rgba(1, 26, 13, 0.918);
     tab-size: 20px ;
+    color: antiquewhite;
      
     
 }
@@ -81,8 +82,8 @@ img#left{
 
 main{
     background-color: rgb(84, 28, 138);
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 nav{
     border: 1px lightblue solid;
