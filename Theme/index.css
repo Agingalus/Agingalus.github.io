@@ -19,7 +19,7 @@ body{
     background-color: rgba(1, 26, 13, 0.918);
     tab-size: 20px ;
     color: antiquewhite;
-     
+    
     
 }
 main#longer{
@@ -40,6 +40,7 @@ figcaption{
 footer{
     background-color: darkslateblue;
     text-align: center;
+    border-radius: 15px;
   
 }
 footer ul{
@@ -68,7 +69,7 @@ h3{
 header{
     text-align: center;
     background-color: rgba(35, 16, 158, 0.774);
-    
+    border-radius: 15px;
 }
 header p{
     font-weight: bold;
@@ -85,10 +86,12 @@ main{
     padding-right: 15px;
     padding-top: 20px;
     padding-bottom: 15px;
+    border-radius: 15px;
 }
 nav{
     border: 1px lightblue solid;
-    background: rgb(63, 63, 150)
+    background: rgb(63, 63, 150);
+    border-radius: 15px;
     
 
 }
