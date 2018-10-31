@@ -15,7 +15,10 @@ aside{
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 133%;
-    margin: 10%;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 2%;
+    margin-top: 2%;
     background-color: rgba(1, 26, 13, 0.918);
     tab-size: 20px ;
     color: antiquewhite;
@@ -70,6 +73,7 @@ header{
     text-align: center;
     background-color: rgba(35, 16, 158, 0.774);
     border-radius: 15px;
+    
 }
 header p{
     font-weight: bold;
