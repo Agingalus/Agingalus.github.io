@@ -109,3 +109,6 @@ nav li{
 .tab{
     text-indent: 40px;
 }
+ol li{
+    padding-block-end: 30px;
+}
