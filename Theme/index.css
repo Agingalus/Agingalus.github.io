@@ -25,6 +25,7 @@ body{
     
     
 }
+
 main#longer{
     height: 60ch;
 }
@@ -37,6 +38,9 @@ figcaption{
     font-size: 70%;
     text-align: center;
     
+}
+button #set-test{
+    border: solid gold;
 }
     
 
@@ -63,9 +67,13 @@ footer ul{
 h1,
 h2,
 h3{
-    justify-content: stretch;
+
     text-align: center;
-   
+
+}
+.center{
+    clear: both;
+    text-align: center;
 }
 #full{
     min-width: 100ch;

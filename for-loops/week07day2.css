@@ -1,0 +1,21 @@
+body{
+    background-color: lightgoldenrodyellow;
+}
+header{
+    text-align: center;
+    background-color: aqua;
+}
+footer{
+    background-color: lightcoral;
+    text-align: center;
+    border-radius: 15px;
+  
+}
+footer ul{
+    list-style-type: none;
+}
+.byline{
+    font-style: italic;
+    font-size: 65%;
+    
+}
