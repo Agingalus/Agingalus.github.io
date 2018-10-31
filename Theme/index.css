@@ -63,7 +63,9 @@ footer ul{
 h1,
 h2,
 h3{
+    justify-content: stretch;
     text-align: center;
+   
 }
 #full{
     min-width: 100ch;
