@@ -39,10 +39,7 @@ figcaption{
     text-align: center;
     
 }
-button #set-test{
-    border: solid gold;
-}
-    
+  
 
 footer{
     background-color: darkslateblue;
@@ -71,6 +68,7 @@ h3{
     text-align: center;
 
 }
+
 .center{
     clear: both;
     text-align: center;
