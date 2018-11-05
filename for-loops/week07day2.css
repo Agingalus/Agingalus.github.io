@@ -19,3 +19,6 @@ footer ul{
     font-size: 65%;
     
 }
+ol{
+    list-style-type: none
+}

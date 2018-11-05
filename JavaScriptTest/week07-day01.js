@@ -24,7 +24,7 @@ var app = {
         if (input % 2 === 0) {
             console.log('Your input of ' + input + ' is even.');
         } else {
-            console.log('Your input of ' + input + ' is odd'.);
+            console.log('Your input of ' + input + ' is odd');
         }
     }
 };
