@@ -1,10 +1,13 @@
 window.onload = () => {
-    const simpleFunction = document.getElementById('simple-function');
-    const functionCalls = document.getElementById('function-calls');
-    const functionReturn = document.getElementById('function-return')
+    simpleFunction = document.getElementById('simple-function');
+    functionParamaters = document.getElementById('function-paramaters');
+    functionReturn = document.getElementById('function-return')
+    functionCalls = document.getElementById('function-calls')
     functionCalls.onclick = simple;
-}
 
+
+
+}
 let words = "Many functions take parameters.";
 let text = " Many functions return values.";
 
@@ -15,6 +18,7 @@ function simpleFunction() {
 
 function functionParamaters(words) {
     console.log(words);
+
 }
 
 function functionReturn() {
@@ -23,7 +27,11 @@ function functionReturn() {
 
 function simple() {
     console.log('simple');
-    simpleFunction.textContent = "simple";
+
+    simpleFunction.textContent = "Functions should consist of statements designed to perform a single task";
+    functionParamaters.textContent = words;
+    functionReturn.textContent = text;
+
 }
 
 simpleFunction();
