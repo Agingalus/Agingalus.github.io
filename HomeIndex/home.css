@@ -1,13 +1,32 @@
-body
-{
+a {
+    color: gold;
+}
+
+body {
     font-size: 133%;
     font-family: sans-serif;
-background-color: darkgreen;
-margin-left: 150px;
+    margin: 4%;
 }
-nav ul{
-    list-style-type: none ;
+
+footer {
+    background-color: rgb(66, 102, 5);
+    text-align: center;
 }
-a{
-    color: gold;
+
+header {
+    text-align: center;
+    background-color: lawngreen
+}
+
+html {
+    background-color: forestgreen
+}
+
+main {
+    background-color: darkgreen;
+    padding: 3%;
+}
+
+nav ul {
+    list-style-type: none;
 }

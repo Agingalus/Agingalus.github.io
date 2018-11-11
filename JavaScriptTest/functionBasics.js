@@ -1,24 +1,31 @@
-let words = "Hi what is up man!";
-function simpleFunction()
-{
-console.log("Functions should consist of statements designed to perform a single task.")
+window.onload = () => {
+    const simpleFunction = document.getElementById('simple-function');
+    const functionCalls = document.getElementById('function-calls');
+    const functionReturn = document.getElementById('function-return')
+    functionCalls.onclick = simple;
 }
 
-function functionParamers(words)
-{
-console.log(words);
-}
-function add(a,b)
-{
-    console.log(a + b);
-}
-function adder()
-{
-    console.log(2+3)
+let words = "Many functions take parameters.";
+let text = " Many functions return values.";
+
+function simpleFunction() {
+    console.log("Functions should consist of statements designed to perform a single task.")
 }
 
+
+function functionParamaters(words) {
+    console.log(words);
+}
+
+function functionReturn() {
+    return text;
+}
+
+function simple() {
+    console.log('simple');
+    simpleFunction.textContent = "simple";
+}
 
 simpleFunction();
-functionParamers(words);
-add(42,7);
-adder();
+functionParamaters(words);
+console.log(functionReturn());
