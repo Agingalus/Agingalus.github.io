@@ -1,0 +1,24 @@
+button {
+    float: left;
+    width: 150px;
+    border-radius: 5px;
+    border: 2px indigo solid;
+}
+
+input {
+    float: left;
+    width: 45px;
+}
+
+div {
+    clear: both;
+}
+
+body {
+    background-color: lightseagreen;
+    margin: 50px;
+}
+
+input {
+    border-radius: 5px;
+}
