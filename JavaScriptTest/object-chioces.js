@@ -47,20 +47,6 @@ console.log(myObject.getname());
 console.log(myObject.middleName);
 console.log(myObject.fullName());
 
-// const functionObject = new FunctionObject
-// const FunctionObject = () => {
-//     console.log("my function object");
-//     const getName = () => {
-//         return "Function Object";
-
-//     }
-//     console.log(getName());
-//     functionObject.prototype.getFullName = () => {
-//         return "hi";
-//     }
-// }
-// functionObject();
-// console.log(getFullName());
 
 
 simpleObject = {
