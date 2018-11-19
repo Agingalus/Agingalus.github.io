@@ -9,6 +9,22 @@ window.onload = () => {
     getNamesButton.onclick = () => {
         displayName.textContent = myObject.getname();
     }
+    const action = document.getElementById("simple-object-action");
+    const displaySimple = document.getElementById("simple-object-display");
+    action.onclick = () => {
+        displaySimple.textContent = simpleObject.sayName();
+    }
+    const action1 = document.getElementById("function-object-action");
+    const displayFunction = document.getElementById("function-object-display");
+    action1.onclick = () => {
+        displayFunction.textContent = FunctionObject();
+    }
+    const action2 = document.getElementById("custom-class-action");
+    const displayClass = document.getElementById("custom-class-display");
+    action2.onclick = () => {
+        displayClass.textContent = custom.sayName();
+    }
+
 
 }
 
@@ -31,17 +47,46 @@ console.log(myObject.getname());
 console.log(myObject.middleName);
 console.log(myObject.fullName());
 
-const functionObject = new FunctionObject
-const FunctionObject = () => {
-    console.log("my function object");
-    const getName = () => {
-        return "Function Object";
+// const functionObject = new FunctionObject
+// const FunctionObject = () => {
+//     console.log("my function object");
+//     const getName = () => {
+//         return "Function Object";
 
-    }
-    console.log(getName());
-    functionObject.prototype.getFullName = () => {
-        return "hi";
+//     }
+//     console.log(getName());
+//     functionObject.prototype.getFullName = () => {
+//         return "hi";
+//     }
+// }
+// functionObject();
+// console.log(getFullName());
+
+
+simpleObject = {
+    sayName: function() {
+        console.log("Simple Object");
+        return "Simple Object";
     }
 }
-functionObject();
-console.log(getFullName());
+simpleObject.dynamicMethod = function() {
+    console.log("Dynamic Method");
+    return "Dynamic Method";
+}
+
+function FunctionObject() {
+    sayName = function() {
+        console.log("Private Function")
+        return "Private Function";
+    }
+    return sayName();
+}
+class CustomClass {
+    sayName() {
+        console.log("Custom Class")
+        return "Custom Class";
+    }
+
+
+}
+custom = new CustomClass;
