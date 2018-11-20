@@ -16,7 +16,7 @@ window.onload = () => {
             li.appendChild(document.createTextNode(number));
             numbersDisplay.appendChild(li);
 
-            numbersDisplay.textContent = numbers;
+            // numbersDisplay.textContent = numbers;
         }
 
 
