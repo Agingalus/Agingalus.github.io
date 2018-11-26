@@ -1,0 +1,33 @@
+body {
+    background-color: darkslateblue;
+    margin: 5%;
+    font-size: 150%;
+}
+
+footer {
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer a {
+    color: azure;
+}
+
+fieldset {
+    border: forestgreen 3px solid;
+}
+
+legend {
+    color: gold;
+}
+
+input {
+    color: brown;
+}

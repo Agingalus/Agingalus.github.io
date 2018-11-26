@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Radio Choices</title>
+    <script src="radioChoices.js"></script>
+    <link rel="stylesheet" href="radioChoices.css">
+</head>
+
+<body>
+    <header>
+        <h1>Radio Choices</h1>
+    </header>
+    <main>
+
+        <fieldset>
+            <legend>The User Selection</legend>
+            <p><b>User choice</b>: <span id="user-choice">Not yet decided</span></p>
+        </fieldset>
+        <fieldset>
+            <legend>Our Form</legend>
+            <!-- OUR FORM GOES HERE -->
+
+            <form id="sort-type" action="goThere">
+                <input type="radio" id="rank" name="sorter" value="Rank">
+                <label for="rank">Rank</label>
+
+                <input type="radio" id="language" name="sorter" value="Language">
+                <label for="language">Language</label>
+
+                <input type="radio" id="status" name="sorter" value="Status">
+                <label for="status">Status</label>
+
+                <input type="radio" id="category" name="sorter" value="Category">
+                <label for="category">Category</label>
+
+                <input type="radio" id="downloads" name="sorter" value="Downloads">
+                <label for="downloads">Downloads</label>
+
+                <input type="radio" id="wait" name="sorter" value="Wait" checked>
+                <label for="wait">Cant decide yet...</label>
+                <div>
+                    <input class="btn-padding" type="submit" value="Submit">
+                </div>
+            </form>
+
+        </fieldset>
+
+    </main>
+    <footer>
+        <hr>
+        <ul>
+            <li>
+                <a href="../HomeIndex/indexHome.html">Home </a>
+            </li>
+        </ul>
+        <p> &copy;<em> Aaron Greene</em></p>
+    </footer>
+</body>
+
+</html>
