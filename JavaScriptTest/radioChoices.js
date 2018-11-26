@@ -1,25 +1,17 @@
 window.onload = () => {
     const myForm = document.getElementById('sort-type');
+    //const valueSet = document.getElementById('user-choice');
 
     myForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const value = document.querySelector('input[name="sorter"]:checked').value;
-        // if (value.toLowerCase() === 'language') {
-        //     showChoice(value);
-        // } else if (value.toLowerCase() === "rank") {
-        //     showChoice(value)
+        //valueSet.textContent = value;
 
-        // } else if (value.toLowerCase() === "status") {
-        //     showChoice(value)
 
-        // } else if (value.toLowerCase() === "category") {
-        //     showChoice(value)
-
-        // } else if (value.toLowerCase() === "downloads") {
-        //     showChoice(value)
-
-        // } else {
+        // if (value.toLowerCase() === "wait") {
         //     showChoice("Its alright we will wait for you...");
+        // } else {
+        //     showChoice(value);
         // }
         switch (value.toLowerCase()) {
             case "rank":
