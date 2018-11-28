@@ -26,29 +26,40 @@ window.onload = () => {
                 break;
 
         }
-        const appearanceButton = document.getElementById('appearanceAction');
 
-        appearanceButton.onclick = () => {
-            const defaults = document.getElementById('default');
-            const basic = document.getElementById('basic');
 
-            disableStylesheet(defaults);
-            enableStylesheet(basic);
-        }
     });
+    const appearanceButton = document.getElementById('appearanceAction');
+    const defaults = document.getElementById('default');
+    const basic = document.getElementById('basic');
+    appearanceButton.onclick = () => {
 
-}
 
-function showChoice(value) {
-    const showIt = document.getElementById("user-choice");
-    showIt.textContent = value;
+        disableStylesheet(defaults);
+        enableStylesheet(basic);
 
-}
 
-function enableStylesheet(node) {
-    node.rel = 'stylesheet';
-}
+    }
+    const appearanceButton2 = document.getElementById('appearanceAction2');
 
-function disableStylesheet(node) {
-    node.rel = 'alternate stylesheet';
+    appearanceButton2.onclick = () => {
+        disableStylesheet(basic);
+        enableStylesheet(defaults);
+    }
+
+    function showChoice(value) {
+        const showIt = document.getElementById("user-choice");
+        showIt.textContent = value;
+
+    }
+
+
+    function enableStylesheet(node) {
+        node.rel = 'stylesheet';
+    }
+
+    function disableStylesheet(node) {
+        node.rel = 'alternate stylesheet';
+    }
+
 }
