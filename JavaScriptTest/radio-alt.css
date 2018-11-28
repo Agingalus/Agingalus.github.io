@@ -1,0 +1,33 @@
+body {
+    background-color: greenyellow;
+    margin: 5%;
+    font-size: 150%;
+}
+
+footer {
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer a {
+    color: rgb(2, 17, 17);
+}
+
+fieldset {
+    border: rgb(4, 41, 110) 3px solid;
+}
+
+legend {
+    color: rgb(202, 201, 194);
+}
+
+input {
+    color: rgb(94, 24, 100);
+}

@@ -26,6 +26,15 @@ window.onload = () => {
                 break;
 
         }
+        const appearanceButton = document.getElementById('appearanceAction');
+
+        appearanceButton.onclick = () => {
+            const defaults = document.getElementById('default');
+            const basic = document.getElementById('basic');
+
+            disableStylesheet(defaults);
+            enableStylesheet(basic);
+        }
     });
 
 }
@@ -34,4 +43,12 @@ function showChoice(value) {
     const showIt = document.getElementById("user-choice");
     showIt.textContent = value;
 
+}
+
+function enableStylesheet(node) {
+    node.rel = 'stylesheet';
+}
+
+function disableStylesheet(node) {
+    node.rel = 'alternate stylesheet';
 }
