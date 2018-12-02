@@ -25,9 +25,33 @@ fieldset {
 }
 
 legend {
-    color: rgb(202, 201, 194);
+    color: rgb(27, 14, 85);
 }
 
 input {
     color: rgb(94, 24, 100);
+}
+
+.blueBackground {
+    background-color: aqua;
+}
+
+.greenBackground {
+    background-color: green;
+}
+
+.redBackground {
+    background-color: rgb(194, 52, 59);
+}
+
+.whiteBackground {
+    background-color: rgb(229, 231, 229);
+}
+
+.pinkBackground {
+    background-color: rgb(201, 11, 169);
+}
+
+.brownBackground {
+    background-color: rgb(151, 87, 26);
 }

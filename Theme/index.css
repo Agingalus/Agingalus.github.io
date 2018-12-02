@@ -1,18 +1,18 @@
-a{
+a {
     color: aliceblue;
 }
-aside{
+
+aside {
     float: right;
     background-color: darkviolet;
     max-width: 15ch;
     border: 3px solid;
-    
     border-color: crimson;
     font-size: 60%;
     padding: 1ch;
 }
 
-body{
+body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 133%;
     margin-right: 10%;
@@ -20,79 +20,77 @@ body{
     margin-bottom: 2%;
     margin-top: 2%;
     background-color: rgba(1, 26, 13, 0.918);
-    tab-size: 20px ;
+    tab-size: 20px;
     color: antiquewhite;
-    
-    
 }
 
-main#longer{
+main#longer {
     height: 60ch;
 }
-.byline{
+
+.byline {
     font-style: italic;
     font-size: 65%;
-    
 }
-figcaption{
+
+figcaption {
     font-size: 70%;
     text-align: center;
-    
 }
-  
 
-footer{
+footer {
     background-color: darkslateblue;
     text-align: center;
     border-radius: 15px;
-  
 }
-footer ul{
+
+footer ul {
     list-style-type: none;
 }
 
-#figcent{
+#figcent {
     text-align: center;
 }
 
-.floatleft{
+.floatleft {
     float: left;
 }
-.floatright{
+
+.floatright {
     float: right;
 }
+
 h1,
 h2,
-h3{
-
+h3 {
     text-align: center;
-
 }
 
-.center{
+.center {
     clear: both;
     text-align: center;
 }
-#full{
+
+#full {
     min-width: 100ch;
 }
 
-header{
+header {
     text-align: center;
     background-color: rgba(35, 16, 158, 0.774);
     border-radius: 15px;
-    
 }
-header p{
+
+header p {
     font-weight: bold;
     color: rgb(13, 136, 19);
 }
-img#left{
-    
+
+img#left {
     float: left;
 }
 
-main{
+main {
     background-color: rgb(84, 28, 138);
     padding-left: 15px;
     padding-right: 15px;
@@ -100,27 +98,30 @@ main{
     padding-bottom: 15px;
     border-radius: 15px;
 }
-nav{
+
+nav {
     border: 1px lightblue solid;
     background: rgb(63, 63, 150);
     border-radius: 15px;
-    
-
 }
-nav ul{
+
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     padding: 8px;
     margin: -1px 0px 0px 0px;
 }
-nav li{
+
+nav li {
     display: inline;
     padding: 8px;
 }
-.tab{
+
+.tab {
     text-indent: 40px;
 }
-ol li{
+
+ol li {
     padding-block-end: 30px;
 }

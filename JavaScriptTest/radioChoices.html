@@ -23,29 +23,29 @@
 
         <fieldset>
             <legend>The User Selection</legend>
-            <p><b>User choice</b>: <span id="user-choice">Not yet decided</span></p>
+            <p><b>User choice</b>: <span id="user-choice1">Not yet decided</span></p>
         </fieldset>
         <fieldset>
             <legend>Our Form</legend>
-            <!-- OUR FORM GOES HERE -->
 
-            <form id="sort-type" action="goThere">
-                <input type="radio" id="rank" name="sorter" value="Rank">
+
+            <form id="sort-type1" action="goThere1">
+                <input type="radio" id="rank" name="sorter1" value="Rank">
                 <label for="rank">Rank</label>
 
-                <input type="radio" id="language" name="sorter" value="Language">
+                <input type="radio" id="language" name="sorter1" value="Language">
                 <label for="language">Language</label>
 
-                <input type="radio" id="status" name="sorter" value="Status">
+                <input type="radio" id="status" name="sorter1" value="Status">
                 <label for="status">Status</label>
 
-                <input type="radio" id="category" name="sorter" value="Category">
+                <input type="radio" id="category" name="sorter1" value="Category">
                 <label for="category">Category</label>
 
                 <input type="radio" id="downloads" name="sorter" value="Downloads">
                 <label for="downloads">Downloads</label>
 
-                <input type="radio" id="wait" name="sorter" value="Wait" checked>
+                <input type="radio" id="wait" name="sorter1" value="Wait" checked>
                 <label for="wait">Cant decide yet...</label>
                 <div>
                     <input class="btn-padding" type="submit" value="Submit">
@@ -53,8 +53,48 @@
             </form>
 
         </fieldset>
+
+
+
+        <section id="form-section" class="">
+            <fieldset>
+                <legend>The User Selection</legend>
+                <p><b>User choice</b>: <span id="user-choice">You have not chosen yet...</span></p>
+            </fieldset>
+            <fieldset>
+                <legend>Color Changer</legend>
+
+
+                <form id="sort-type" action="goThere">
+                    <input type="radio" id="blue" name="sorter" value="Blue">
+                    <label for="blue">Blue</label>
+
+                    <input type="radio" id="green" name="sorter" value="Green">
+                    <label for="green">Green</label>
+
+                    <input type="radio" id="red" name="sorter" value="Red">
+                    <label for="red">Red</label>
+
+                    <input type="radio" id="white" name="sorter" value="White">
+                    <label for="white">White</label>
+
+                    <input type="radio" id="pink" name="sorter" value="Pink">
+                    <label for="pink">Pink</label>
+
+                    <input type="radio" id="brown" name="sorter" value="Brown" checked>
+                    <label for="brown">Brown</label>
+                    <div>
+                        <input class="btn-padding" type="submit" value="Submit">
+                    </div>
+                </form>
+
+            </fieldset>
+        </section>
+        <br>
         <button type="button" id="appearanceAction">Change Appearence</button>
-        <button id="appearanceAction2" type="button">Change Appearance 2</button>
+        <button type="button" id="appearanceAction2">Back To Normal</button>
+
+
 
     </main>
     <footer>
