@@ -1,0 +1,32 @@
+a {
+    color: rgb(224, 8, 62);
+}
+
+body {
+    font-size: 133%;
+    font-family: sans-serif;
+    margin: 4%;
+}
+
+footer {
+    background-color: rgb(30, 162, 167);
+    text-align: center;
+}
+
+header {
+    text-align: center;
+    background-color: rgb(56, 224, 188)
+}
+
+html {
+    background-color: rgb(27, 86, 114)
+}
+
+main {
+    background-color: rgb(40, 89, 129);
+    padding: 3%;
+}
+
+nav ul {
+    list-style-type: none;
+}

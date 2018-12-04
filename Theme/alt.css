@@ -1,10 +1,10 @@
 a {
-    color: aliceblue;
+    color: rgb(20, 3, 180);
 }
 
 aside {
     float: right;
-    background-color: darkviolet;
+    background-color: rgb(23, 207, 152);
     max-width: 15ch;
     border: 3px solid;
     border-color: crimson;
@@ -19,9 +19,9 @@ body {
     margin-left: 10%;
     margin-bottom: 2%;
     margin-top: 2%;
-    background-color: rgba(1, 26, 13, 0.918);
+    background-color: rgba(44, 236, 27, 0.918);
     tab-size: 20px;
-    color: antiquewhite;
+    color: rgb(8, 5, 0);
 }
 
 main#longer {
@@ -39,7 +39,7 @@ figcaption {
 }
 
 footer {
-    background-color: darkslateblue;
+    background-color: rgba(233, 38, 38, 0.822);
     text-align: center;
     border-radius: 15px;
 }
@@ -77,13 +77,13 @@ h3 {
 
 header {
     text-align: center;
-    background-color: rgba(35, 16, 158, 0.774);
+    background-color: rgba(150, 110, 224, 0.973);
     border-radius: 15px;
 }
 
 header p {
     font-weight: bold;
-    color: rgb(13, 136, 19);
+    color: rgb(62, 68, 2);
 }
 
 img#left {
@@ -91,7 +91,7 @@ img#left {
 }
 
 main {
-    background-color: rgb(84, 28, 138);
+    background-color: rgb(39, 146, 218);
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 20px;
@@ -100,8 +100,8 @@ main {
 }
 
 nav {
-    border: 1px lightblue solid;
-    background: rgb(63, 63, 150);
+    border: 1px rgb(134, 14, 14) solid;
+    background: rgb(218, 236, 114);
     border-radius: 15px;
 }
 
