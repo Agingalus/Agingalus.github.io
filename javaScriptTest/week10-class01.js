@@ -32,5 +32,3 @@ const objectLiteral = {
 
 const numbers = [2, 1, 3];
 //const sorted = numbers.sort();
-console.log(sorted); // [ 1, 2, 3 ]
-console.log(numbers); // [ 1, 2, 3 ]
