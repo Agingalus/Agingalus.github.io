@@ -1,0 +1,39 @@
+body {
+    width: auto;
+}
+
+button {
+    border-radius: 20px;
+    background-color: white;
+}
+
+div {
+    display: flex;
+}
+
+footer {
+    background-color: rgb(218, 218, 26);
+    justify-content: center;
+    display: flex;
+}
+
+#middle {
+    background-color: rgb(255, 210, 217);
+    margin-top: 0px;
+}
+
+#placement {
+    position: absolute;
+    top: 245px;
+    left: 195px;
+}
+
+#space {
+    text-align: center;
+    display: block;
+    padding-left: 60px;
+}
+
+#top {
+    background-color: rgba(87, 133, 87, 0.753);
+}
