@@ -6,15 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="sandbox.css">
 </head>
 
 <body>
-    <p>
+
+    <div>
         <label>Will you attend?</label>
-        <select asp-for="WillAttend">
-			<option value="">Choose an option</option>
-			<option value="true">Yes, I'll be there</option>
-			<option value="false">No, I can't come</option>
-		
+        <select asp-for="WillAttend"></select>
+        <option value="">Choose an option</option>
+        <option value="true">Yes, I'll be there</option>
+        <option value="false">No, I can't come</option>
+
+    </div>
+    <div id="myDiv" class="hi">
+        <p>hi</p>
+        <!---->
+
+    </div>
 </body>
+
 </html>
