@@ -1,7 +1,47 @@
 #colorBar {
     width: 400px;
     height: 50px;
-    background-color: OldLace;
     margin-top: 20px;
-    border: 1px solid LightGray;
+}
+
+.border {
+    border: indigo 1px solid;
+    padding: 5px;
+    max-width: 80px;
+    text-align: center;
+    align-items: center;
+    margin: 2px;
+}
+
+body {
+    background: -webkit-linear-gradient(left, red, orange, yellow, green, cyan, blue, violet);
+}
+
+#inline {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: inline-block;
+}
+
+#moreRoom {
+    padding-left: 10px;
+}
+
+button {
+    border-radius: 6px;
+}
+
+form {
+    justify-content: center;
+}
+
+html {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }

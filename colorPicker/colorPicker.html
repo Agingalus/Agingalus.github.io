@@ -11,17 +11,43 @@
 </head>
 
 <body>
-    <form action="">
+    <form id="form1">
         <h1><b>CSS Color Displayer</b></h1>
         <p>Select a number from 0 to 255 for each color value:</p>
-        <label for="red">Red:</label><input type="text" name="red" id="red" value="0">
-        <label for="green">Green:</label><input type="text" name="green" id="green" value="0">
-        <label for="blue">Blue</label> <input type="text" name="blue" id="blue" value="0">
-        <button id="change">Show me the color</button>
-        <button id="clear">Clear all</button>
+
+        <section id="inline">
+            <div class="border">
+
+                <label for="red">Red:</label><input type="text" name="red" id="red" value="0" size="4" maxlength="3">
+            </div>
+
+
+            <div class="border">
+                <label for="green">Green:</label><input type="text" name="green" id="green" value="0" size="4" maxlength="3">
+            </div>
+
+
+            <div class="border">
+                <label for="blue">Blue</label> <input type="text" name="blue" id="blue" value="0" size="4" maxlength="3">
+            </div>
+
+            <div id="moreRoom">
+                <button class="column" type="button" id="change">Show me the color</button>
+                <br>
+                <button class="column" type="button" id="clear">Clear all</button>
+
+            </div>
+
+        </section>
+        <p>
+            In hex: #<span id="inHex"> </span>
+        </p>
+
         <div id="colorBar">
-            <p>hi</p>
+
         </div>
+
+
 
     </form>
     <script src="colorPicker.js"></script>
