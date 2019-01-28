@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<!--
+	 Creator: Aaron Greene
+	 Date: 1/27/18
+	 Discription: This website is designed to demenstrate how to use
+	 	local storage and to then retreave it.
+ -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 5 Web Storage</title>
+
+    <link href="reset.css" type="text/css" rel="stylesheet" />
+
+    <link href="webStoreage.css" type="text/css" rel="stylesheet" />
+
+    <link rel="icon" type="image/png" href="../images/doughnut.png">
+
+    <script src="webStroeage.js"></script>
+
+
+</head>
+
+<body>
+
+    <div id="main">
+        <section id="userinput">
+            Order <br>
+            <hr />
+            <br /><br />
+            <form>
+
+                <div>Type of doughnut: <br /><input type="text" id="doughnut" size="20"></div>
+                <br />
+
+
+                <div>Any extra toppings: <br /> <input type="text" id="toppings" size="20"></div>
+                <br />
+                <p>Would you like extra frosting:</p>
+                <input type="radio" id="YesYrosting" name="sorter" value="Yes">
+                <label for="frosting">Yes</label>
+                <input type="radio" id="Nofrosting" name="sorter" value="No">
+                <label for="frosting">No</label>
+                <div>Why is this your favoate doughnut::<br /> <textarea id="comments" rows="10"></textarea></div>
+                <br />
+                <div><input type="button" id="button" value="Save"></div>
+
+            </form>
+        </section>
+
+
+        <section id="useroutput">
+            OUTPUT
+            <hr />
+            <br /><br />
+        </section>
+
+    </div>
+
+
+
+</body>
+
+</html>

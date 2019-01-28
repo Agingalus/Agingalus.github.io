@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+#main {
+    width: 750px;
+    height: 500px;
+    margin: 40px;
+}
+
+#userinput {
+    float: left;
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #4872cc;
+    width: 300px;
+    height: 500px;
+    border-radius: 20px;
+}
+
+#useroutput {
+    float: left;
+    margin-top: 25px;
+    margin-left: 20px;
+    padding: 20px;
+    width: 300px;
+    height: 500px;
+    background-color: rgb(204, 98, 56);
+    border-radius: 20px;
+}
+
+body {
+    background-image: url(../images/baked-goods-bakery-baking-1418361.jpg);
+    background-size: cover;
+}
