@@ -1,5 +1,13 @@
 "use strict"
-let userArray = []; //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//  This project allow users to add numbers to an array and to then shuffle it, they can clear the 
+//  array if they want to reset the array.
+// Author: Aaron Greene
+// Date 2/2/19
+
+
+
+// variables
+let userArray = [];
 let copy1 = userArray;
 let shuffleArray = [];
 
@@ -10,7 +18,7 @@ const clear = document.getElementById("clear");
 const printArraySpace = document.getElementById("printArray");
 const original = document.getElementById("original");
 
-
+// events
 addButton.addEventListener("click", addit, false);
 shuffleIt.addEventListener("click", shuffleItEvent, false);
 clear.addEventListener("click", clearIt, false);
@@ -20,10 +28,7 @@ function shuffleItEvent() {
 }
 
 
-
-
-
-
+// this allows the user to reset the array and clear the data on the screen
 function clearIt() {
     document.forms["form1"].reset();
     userArray = [];
@@ -33,7 +38,7 @@ function clearIt() {
 
 }
 
-
+// validates the number and then adds it to the array, also clears the input box
 function addit() {
     let numberToAdd = document.querySelector('input[name="addNumber"]').value;
     if (Number(numberToAdd)) {
@@ -44,7 +49,7 @@ function addit() {
 }
 
 
-
+// prints the array
 function printArray(array, where) {
     let number;
     number = array[0];
@@ -59,7 +64,7 @@ function printArray(array, where) {
     where.textContent = "";
     where.textContent = number;
 }
-
+// shuffles and then prints the array
 function shuffle(userArray) {
     let copy = [];
     copy = userArray.slice();
