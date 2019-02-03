@@ -1,3 +1,4 @@
+"use strict";
 var change = document.getElementById("change");
 var clear = document.getElementById("clear");
 clear.addEventListener("click", clearColor, false)
@@ -36,7 +37,7 @@ function clearColor() {
 
     colorBar.style.backgroundColor = "inherit";
     inHex.textContent = "";
-    document.forms["form1"].reset()
+    document.forms["form1"].reset();
 }
 
 function checkIt(number) {
