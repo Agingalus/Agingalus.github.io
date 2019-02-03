@@ -36,10 +36,13 @@ function clearIt() {
 
 function addit() {
     let numberToAdd = document.querySelector('input[name="addNumber"]').value;
-    userArray.push(numberToAdd);
-    printArray(userArray, original);
+    if (Number(numberToAdd)) {
+        userArray.push(numberToAdd);
+        printArray(userArray, original);
+    }
     document.forms["form1"].reset();
 }
+
 
 
 function printArray(array, where) {
