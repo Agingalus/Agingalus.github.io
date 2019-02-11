@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 //  This project allow users to add numbers to an array and to then shuffle it, they can clear the 
 //  array if they want to reset the array.
 // Author: Aaron Greene

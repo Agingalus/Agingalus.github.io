@@ -1,0 +1,11 @@
+@charset "UTF-8";
+body {
+    text-align: center;
+    margin: 20%;
+}
+
+#allDetails {}
+
+#diologSection {
+    padding-top: 200px;
+}

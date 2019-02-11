@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="adventureGame.css">
+</head>
+
+<body>
+    <div id="allDetails">
+        <section style="float: left">
+            <p>
+                Room: <span id="location"></span>
+            </p>
+            <p>
+                description: <span id="description"></span>
+            </p>
+            <p id="img">
+                <span id="image"></span>
+
+
+            </p>
+            <p>
+                Game message:<span id="gameMessage"></span>
+
+            </p>
+            <p>Hint: <span id="hint"></span></p>
+            <form id="form1">
+                <label for="roomNumber">Room number</label>
+                <input type="text" id="roomNumber" name="roomNumber">
+                <button id="submit" type="submit">submit</button>
+            </form>
+        </section>
+        <section id="diologSection" style="float: right">
+            <img src="images/profPllum.jpg" alt="prof plum" height="200" width="200">
+            <p>
+                <span id="printClue">add diolog here</span>
+            </p>
+
+
+        </section>
+    </div>
+
+
+
+
+    <script src="adventureGame.js"></script>
+</body>
+
+</html>
