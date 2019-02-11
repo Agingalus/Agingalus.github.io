@@ -31,10 +31,12 @@ let ufoObject = {
         moveUFO: (event) => {
             if (event.keyCode === UFO_UP) {
                 ufoObject.y -= 10;
+                if (ufoObject.y < 100) { ufoObject.y = 100; }
 
 
             } else if (event.keyCode === UFO_DOWN) {
                 ufoObject.y += 10;
+                if (ufoObject.y > 360) { ufoObject.y = 360; }
             }
             render();
 
