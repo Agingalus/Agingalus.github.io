@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body {
+    background-image: url(../images/night-sky-background.jpg);
+}
+
 @font-face {
     font-family: 'spaceAge';
     src: url('../fonts/space_age-webfont.eot');
