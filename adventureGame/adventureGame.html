@@ -10,6 +10,19 @@
 </head>
 
 <body>
+    <div id="intro">
+        <h1>A Clue like Game</h1>
+        <p>Thank you for coming detective, your help is alwasy appritated. Today we found a dead body in the house. You need to figure our who killed him, with what wepon. When you figure that out we can arrest the culpret. All of the potental suspects are
+            inside.
+        </p>
+        <p>If you find your self not sure what to do or what you can say type "help" or "hint" to get advice</p>
+        <p> <span id="introHelp"></span></p>
+        <p><b> Good luck detective!</b></p>
+
+
+
+        <button id="play">Play game</button>
+    </div>
     <div id="allDetails">
         <section style="float: left">
             <p>
@@ -32,16 +45,58 @@
                 <label for="roomNumber">Room number</label>
                 <input type="text" id="roomNumber" name="roomNumber">
                 <button id="submit" type="submit">submit</button>
+                <br><br>
+
+
             </form>
+            <button id="solve">Solve the Murder</button>
         </section>
         <section id="diologSection" style="float: right">
-            <img src="images/profPllum.jpg" alt="prof plum" height="200" width="200">
+            <span id="personImg"></span>
             <p>
-                <span id="printClue">add diolog here</span>
+                <span id="printClue"></span>
             </p>
-
-
         </section>
+
+    </div>
+    <div id="solution">
+
+        <label for="guiltyName">Murders Name:</label>
+        <select name="guiltyName" id="guiltyName" onchange="getValue();">
+			<option value="1">Miss Scarlet</option>
+			<option value="white">Mrs. White</option>
+			<option value="green">Mr. Green</option>
+			<option value="mustard">Colonal Mustard</option>
+			<option value="plum">Professor Plum</option>
+			<option value="peacock">Mrs. Peacock</option>
+		</select>
+        <br> <br>
+
+        <label for="guiltyWepon">Murder Wepon:</label>
+        <select name="guiltyWepon" id="guiltyWepon" onchange="getValue();">
+			<option value="wrench">Wrench</option>
+			<option value="revolver">Revolver</option>
+			<option value="knive">Knife</option>
+			<option value="candlestick">candlestick</option>
+			<option value="rope">Rope</option>
+			<option value="leadPipe">Lead pipe</option>
+		</select>
+        <br>
+        <br>
+        <label for="guiltyPlace">Murder Room:</label>
+        <select name="guiltyPlace" id="guiltyPlace" onchange="getValue();">
+			<option value="kitchen">Kitchen</option>
+			<option value="hall">Hall</option>
+			<option value="libary">Library</option>
+			<option value="study">Study</option>
+			<option value="lounge">Lounge</option>
+			<option value="conservatory">Conservatory</option>
+			<option value="billiardRoom">Billiard Room</option>
+			<option value="ballroom">Ballroom</option>
+			<option value="diningRoom">Dining Room</option>
+		</select>
+        <button id="answer" type="submit">Solve</button>
+
     </div>
 
 
@@ -49,5 +104,6 @@
 
     <script src="adventureGame.js"></script>
 </body>
+
 
 </html>
