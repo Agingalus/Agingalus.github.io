@@ -1,0 +1,23 @@
+Current way to go as of 2/14/18 3:34pm
+
+north
+take item(take flute)
+north 
+take item(take wine)
+south
+south
+west 
+talk(mustard)
+give item(wine)
+take item (this is how you get the key)
+east
+east
+north 
+north
+unlock door(with key you have)
+talk (mrs. white is unhappy and wont talk to you unless you play the flute, with i am still coding in now, so you just have to  go to the console and enter    white.happy = true)
+talk 
+then hit solve the muder
+Mr. green with the Revolver in the Billard Room
+so far the only way you know you got it is the console says You win!
+still working on the rest.
