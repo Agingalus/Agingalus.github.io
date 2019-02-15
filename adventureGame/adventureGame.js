@@ -15,12 +15,13 @@ const introHelp = document.getElementById("introHelp");
 const solve = document.getElementById("solve");
 const answer = document.getElementById("answer");
 const solution = document.getElementById("solution");
+const fluteMusic = document.getElementById("fluteMusic").src;
 
 
 let guessPerson;
 let guessWepon;
 let guessPlace;
-
+let sound = true;
 
 
 // event listeners
@@ -61,7 +62,7 @@ const errorMessages = ["You can not go north of here, you are at the edge of the
 ];
 
 
-const actions = ["north", "east", "south", "west", "take secret passage", "help", "take item", "play item", "give item", "unlock door", "talk", "hint"];
+const actions = ["north", "east", "south", "west", "take secret passage", "help", "take item", "play item", "give item", "unlock door", "talk", "hint", "play flute"];
 
 //people dont think i need this
 //let personRoom = [0, 2, 3, 5, 6, 8];
@@ -88,13 +89,6 @@ class Person {
         this.notHappyClue = notHappyClue;
 
     }
-
-    // name;
-    // happy;
-    // notHappyClue;
-    // happyClue;
-    // room;
-    // picture;
 }
 
 let scarlet = new Person("Miss Scarlet", true, "I was in the Conservatory at the time of the merder, but I did notice that Mr. Green was suprizingly calm when everyone esle seemed in compleat shock. That is all I can tell you.", 0, "images/white.jpg", "");
@@ -115,6 +109,7 @@ helpText += ".";
 displayRoom();
 introHelp.textContent = helpText;
 
+// used in html for onchange
 // eslint-disable-next-line no-unused-vars
 function getValue() {
     guessPerson = document.querySelector("select[name='guiltyName']").value;
@@ -123,7 +118,38 @@ function getValue() {
 
 }
 
+function playSound(music) {
+    let audio = document.createElement("audio");
+    audio.src = music;
 
+    audio.play();
+    audio.volume = 0.3;
+    mute(music);
+
+}
+
+function playSoundDuration(music, duration) {
+    let audio = document.createElement("audio");
+    audio.src = music;
+
+    audio.play();
+    audio.volume = 0.3;
+    setTimeout(function() { audio.muted = true; }, duration, audio);
+
+}
+
+function mute(music) {
+    if (sound === true) {
+        sound = false;
+        music.volume = 0;
+
+    } else {
+        sound = true;
+        music.volume = 0.3;
+
+    }
+
+}
 
 function checkAnswer() {
     if (guessPerson === "green" && guessPlace === "billiardRoom" && guessWepon === "revolver") {
@@ -135,7 +161,6 @@ function checkAnswer() {
 }
 
 function solveIt() {
-    introDisplay.style.display = "none";
     gameDisplay.style.display = "none";
     solution.style.display = "block";
 
@@ -210,10 +235,10 @@ function changeRoom() {
     event.preventDefault();
     gameMessage.textContent = "";
     hintPrint.textContent = "";
-    let roomNumber = document.querySelector("input[name='roomNumber']").value;
+    let userInput = document.querySelector("input[name='userInput']").value;
     for (let i = 0; i < actions.length; i++) {
-        if (roomNumber === actions[i]) {
-            valadateMovment(roomNumber);
+        if (userInput.toLowerCase().includes(actions[i])) {
+            valadateMovment(actions[i]);
             break;
         } else if (i === actions.length - 1) {
             gameMessage.textContent = "Sorry, I did not understand that...";
@@ -345,6 +370,17 @@ function valadateMovment(choice) {
                 gameMessage.textContent = errorMessages[8];
             }
             break;
+        case "play flute":
+            playSoundDuration(fluteMusic, 5000);
+            if (curentLocation === 2 && white.happy === false) {
+                white.happy === true;
+                talkToPerson();
+            } else {
+                gameMessage.textContent = "Although you play the flute beautifuly, no one is paying attention to you.";
+
+            }
+            break;
+
         default:
             console.log("error");
             break;

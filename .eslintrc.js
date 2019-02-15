@@ -12,7 +12,7 @@ module.exports = {
 
 
         "indent": [
-            "error",
+            "warn",
             4, { "SwitchCase": 1 }
         ],
         "linebreak-style": [
@@ -26,6 +26,7 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
     }
 };

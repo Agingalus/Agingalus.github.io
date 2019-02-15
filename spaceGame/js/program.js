@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 "use strict";
 
 // Arrow key codes
@@ -18,34 +19,36 @@ let rocket = {
 const torpedo = document.querySelector("#torpedo"),
     startBtn = document.querySelector("#start"),
     fireBtn = document.querySelector("#fire"),
-    muteBtn = document.querySelector("#muteBtn");
+    muteBtn = document.querySelector("#muteBtn"),
+    introScreen = document.getElementById("introScreen"),
+    gameScreen = document.getElementById("gameScreen");
 
 let theme = document.getElementById("themeSong");
 let velocity = 5;
 let sound = true;
-let missileSound = document.getElementById('missileSound').src;
+let missileSound = document.getElementById("missileSound").src;
 // the ufo info
 let ufoObject = {
-        img: document.querySelector("#ufo"),
-        y: 200,
-        moveUFO: (event) => {
-            if (event.keyCode === UFO_UP) {
-                ufoObject.y -= 10;
-                if (ufoObject.y < 100) { ufoObject.y = 100; }
+    img: document.querySelector("#ufo"),
+    y: 200,
+    moveUFO: (event) => {
+        if (event.keyCode === UFO_UP) {
+            ufoObject.y -= 10;
+            if (ufoObject.y < 100) { ufoObject.y = 100; }
 
 
-            } else if (event.keyCode === UFO_DOWN) {
-                ufoObject.y += 10;
-                if (ufoObject.y > 360) { ufoObject.y = 360; }
-            }
-            render();
-
-
+        } else if (event.keyCode === UFO_DOWN) {
+            ufoObject.y += 10;
+            if (ufoObject.y > 360) { ufoObject.y = 360; }
         }
+        render();
+
+
     }
-    // plays a sound at 2x speed
+};
+// plays a sound at 2x speed
 function playSound(music) {
-    let audio = document.createElement('audio');
+    let audio = document.createElement("audio");
     audio.src = music;
     audio.playbackRate = 2;
     audio.play();
@@ -57,7 +60,7 @@ function playSound(music) {
 render();
 
 startBtn.addEventListener("click", startGameHandler, false);
-fireBtn.addEventListener("click", fireTorpedoHandler, false)
+fireBtn.addEventListener("click", fireTorpedoHandler, false);
 window.addEventListener("keydown", keydownHandler, false);
 window.addEventListener("keydown", ufoObject.moveUFO, false);
 window.addEventListener("keydown", spaceShoot, false);
@@ -66,7 +69,7 @@ muteBtn.addEventListener("click", mute, false);
 // allows space key to fire missile
 function spaceShoot(e) {
     if (e.keyCode === 32) {
-        fireTorpedoHandler()
+        fireTorpedoHandler();
     }
 }
 
@@ -83,24 +86,24 @@ function startGameHandler() {
 }
 // make the ufo disapre when hit and swich locations
 let hideUFO = () => {
-        ufoObject.img.style.visibility = "hidden";
-        let number = Math.floor(Math.random() * 350 + 50);
-        ufoObject.y = number;
-        setTimeout(showUFO, 3000);
-    }
-    //reveals new ufo
+    ufoObject.img.style.visibility = "hidden";
+    let number = Math.floor(Math.random() * 350 + 50);
+    ufoObject.y = number;
+    setTimeout(showUFO, 3000);
+};
+//reveals new ufo
 
 let showUFO = () => {
-        ufoObject.img.style.visibility = "visible";
+    ufoObject.img.style.visibility = "visible";
 
-        render();
+    render();
 
-    }
-    // stops th sound
+};
+// stops th sound
 function mute() {
     if (sound === true) {
         sound = false;
-        theme.volume = 0
+        theme.volume = 0;
 
     } else {
         sound = true;
@@ -116,14 +119,14 @@ function fireTorpedoHandler() {
     // 'left' property changes value
     torpedo.style.visibility = "visible";
     if ((rocket.x - 600) < 0) {
-        torpedo.style.left = "60px"
+        torpedo.style.left = "60px";
 
     } else {
         torpedo.style.left = (rocket.x - 600) + "px";
     }
     if (sound === true) {
-        playSound(missileSound)
-    };
+        playSound(missileSound);
+    }
     if (rocket.y <= ufoObject.y + 45 && rocket.y >= ufoObject.y - 37) {
         setTimeout(hideUFO, 700);
     }
