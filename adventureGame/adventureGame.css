@@ -1,7 +1,7 @@
 @charset "UTF-8";
 body {
     text-align: center;
-    margin: 15%;
+    margin: 5%;
     margin-top: 5%;
     background-color: rgb(25, 191, 197);
 }
@@ -9,7 +9,7 @@ body {
 #diologSection {
     padding-top: 200px;
     max-width: 400px;
-    min-width: 400px;
+    min-width: 20%;
     text-align: left;
 }
 
