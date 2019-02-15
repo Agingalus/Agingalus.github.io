@@ -16,6 +16,9 @@ const solve = document.getElementById("solve");
 const answer = document.getElementById("answer");
 const solution = document.getElementById("solution");
 const fluteMusic = document.getElementById("fluteMusic").src;
+const back = document.getElementById("back");
+const saveIt = document.getElementById("saveIt");
+const loadIt = document.getElementById("loadIt");
 
 
 let guessPerson;
@@ -30,6 +33,9 @@ sumbit.addEventListener("click", changeRoom, false);
 play.addEventListener("click", playGame, false);
 solve.addEventListener("click", solveIt, false);
 answer.addEventListener("click", checkAnswer, false);
+back.addEventListener("click", playGame, false);
+saveIt.addEventListener("click", saveGame, false);
+loadIt.addEventListener("click", loadGame, false);
 
 
 //map array
@@ -72,9 +78,9 @@ const actions = ["north", "east", "south", "west", "take secret passage", "help"
 
 let curentLocation = 7;
 let unlocked = false;
-let talkHelp = "Did you talk to the person in this room yet?";
-let needKey = " You need a key to get in to the ball room...";
-let needPickup = " There might be something in this room you could pick up...";
+const talkHelp = "Did you talk to the person in this room yet?";
+const needKey = " You need a key to get in to the ball room...";
+const needPickup = " There might be something in this room you could pick up...";
 let helpText;
 let counter = 0;
 
@@ -161,6 +167,7 @@ function checkAnswer() {
 }
 
 function solveIt() {
+    introDisplay.style.display = "none";
     gameDisplay.style.display = "none";
     solution.style.display = "block";
 
@@ -170,6 +177,8 @@ function solveIt() {
 function playGame() {
     introDisplay.style.display = "none";
     gameDisplay.style.display = "block";
+    solution.style.display = "none";
+
 }
 
 
@@ -408,3 +417,28 @@ function typeWriterNotHappy() {
     }
 }
 // look at this later https://codepen.io/linrock/pen/Amdhr
+
+function saveGame() {
+    let arraySize = backPack.length;
+    for (let i = 0; i < backPack.length; i++) {
+        localStorage.setItem("backPack" + i, backPack[i]);
+    }
+    localStorage.setItem("isMustardHappy", mustard.happy);
+    localStorage.setItem("isWhiteHappy", white.happy);
+    localStorage.setItem("curentLocation", curentLocation);
+    localStorage.setItem("wantSound", sound);
+    localStorage.setItem("unlocked", unlocked);
+    localStorage.setItem("arraySize", arraySize);
+}
+
+function loadGame() {
+    let arraySize = localStorage.getItem("arraySize");
+    for (let i = 0; i < arraySize; i++) {
+        backPack[i] = localStorage.getItem("backPack" + i);
+    }
+    mustard.happy = localStorage.getItem("isMustardHappy");
+    white.happy = localStorage.getItem("isWhiteHappy");
+    curentLocation = localStorage.getItem("curentLocation");
+    sound = localStorage.getItem("wantSound");
+    unlocked = localStorage.getItem("unlocked");
+}

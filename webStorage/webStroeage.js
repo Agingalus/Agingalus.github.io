@@ -16,13 +16,13 @@ function saveInfo() {
     var doughnut = document.getElementById("doughnut").value;
 
     var toppings = document.getElementById("toppings").value;
-    var frosting = document.querySelector('input[name="sorter"]:checked').value;
+    var frosting = document.querySelector("input[name='sorter']:checked").value;
     var comments = document.getElementById("comments").value;
 
 
     localStorage.setItem("doughnutName", doughnut);
     localStorage.setItem("userComments", comments);
-    localStorage.setItem("anyToppings", toppings);;
+    localStorage.setItem("anyToppings", toppings);
     localStorage.setItem("wantFrosting", frosting);
 
 
@@ -31,7 +31,7 @@ function saveInfo() {
 }
 
 function display() {
-    var rightBox = document.getElementById("useroutput");
+
     var TheDoughnut = localStorage.getItem("doughnutName");
     var theComments = localStorage.getItem("userComments");
     var theToppings = localStorage.getItem("anyToppings");
