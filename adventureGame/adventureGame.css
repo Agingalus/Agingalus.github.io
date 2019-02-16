@@ -23,7 +23,9 @@ body {
 
 #intro {
     display: block;
-    tab-size: 4ch;
+    margin: 20%;
+    font-family: sans-serif;
+    font-size: 150%;
 }
 
 #solution {
