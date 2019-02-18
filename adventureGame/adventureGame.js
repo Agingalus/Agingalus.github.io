@@ -43,9 +43,9 @@ restartIt.addEventListener("click", restartGame, false);
 const items = ["wine bottle", "flute"];
 const itemLocations = [1, 4];
 
-const map = ["Ballroom", "Dinning Room", "Billard Room", "Study", "Lounge", "Conservatory", "Library", "Hall", "Kichen"];
+const map = ["Ballroom", "Dining Room", "Billiard Room", "Study", "Lounge", "Conservatory", "Library", "Hall", "Kitchen"];
 
-const locationDiscription = ["Where people dance", "where people eat", "where people play pool", "where people study", "where people chill", "lots of flowers", "I love to read", "a long passage leading somwhere un-known", "Fooooooooood!!!"];
+const locationDiscription = ["A place of frivolity and dancing", "An opportunity to experience culinary excellence", "A place of challenging gamesmanship", "The center of knowledge and wisdom", "An island of relaxation from the busy pace of everyday life", "Exposure to the sights and scents of flowers can restore the soul", "A repository of knowledge that will enrich your mind and inspire your heart", "The long passage connecting other rooms", "The source of all things culinary and delightfully tasty!"];
 
 const locationImage = ["images/ballroom.jpg", "images/diningroom.jpg", "images/BilliardRoom.jpg", "images/study.jpg", "images/lounge.jpg", "images/conservitory.jpg", "images/library.jpg", "images/hall.jpg", "images/kitchen.jpg"];
 
@@ -54,17 +54,18 @@ const needKey = " You need a key to get in to the ball room...";
 const needPickup = " There might be something in this room you could pick up...";
 
 const errorMessages = {
-    0: "You can not go north of here, you are at the edge of the map.",
-    1: "You can not go east of here, you are at the edge of the map.",
-    2: "You can not go south of here, you are at the edge of the map.",
-    3: "You can not go west of here, you are at the edge of the map.",
+    0: "You cannot go north of here, you are at the edge of the map.",
+    1: "You cannot go east of here, you are at the edge of the map.",
+    2: "You cannot go south of here, you are at the edge of the map.",
+    3: "You cannot go west of here, you are at the edge of the map.",
     4: "The door is locked, you need to unlock it with a key.",
     5: "There is no item to take here.",
-    6: "There is not secret passage in this room.",
+    6: "There is no secret passage in this room.",
     7: "You do not have an item to play.",
     8: "You do not have an item that anyone in the room wants.",
     9: "There is no one in this room."
 };
+
 
 const actions = ["north", "east", "south", "west", "take secret passage", "help", "take", "give", "unlock door", "talk", "hint", "play flute"];
 
@@ -98,13 +99,12 @@ class Person {
         this.notHappyClue = notHappyClue;
     }
 }
-
-let scarlet = new Person("Miss Scarlet", true, "I was in the Conservatory at the time of the murder, but I did notice that Mr. Green was surprisingly calm when everyone else seemed in complete shock. That is all I can tell you.", 0, "images/white.jpg", "");
-let white = new Person("Mrs. White", false, "Thank you for helping me calm down. I was so freaked out because while I was cleaning I found ton of blood in the billiard room. I know the body was found in a closet in the dinning room, so I'm not sure why there is blood here. Unless he was killed here.", 2, "images/white.jpg", "I’m sorry I’m just to scared, I cant talk to you. The only thing that calms me down is the flute.");
-let peacock = new Person("Mrs. Peacock", true, "I did not know the victim very well, but Mr. Green, Professor Plum and him where always fighting.", 3, "images/peacock.jpg", "");
-let plum = new Person("Professor Plum", true, "I knew him very well. We always used to debate politics. I was always right of course, but I will miss have someone to argue with. I hope you find his killer.", 5, "images/plum.jpg", "");
-let mustard = new Person("Colonel Mustard", false, "Thanks for that drink, ever since the war, when ever I hear a gun shot it brings me back to the times of war. I don’t know who could do such a thing and kill him, but the ony people who know how to use a gun are me and Mr. Green.", 6, "images/mustard.jpg", "I don’t talk to any one with out a bottle of good wine.");
-let green = new Person("Mr. Green", true, "You are wasting your time talking to me, talk to the other people to find the real murderer. In the mean time I’m going to finish making my dinner.", 8, "images/green.jpg", "");
+let scarlet = new Person("Miss Scarlet", true, "I was in the Conservatory at the time of the murder, so I didn’t see or hear anything. I did notice that Mr. Green seemed surprisingly calm when he heard about the murder. Everyone else was in shock. I’m afraid that’s all I can tell you.", 0, "images/white.jpg", "");
+let white = new Person("Mrs. White", false, "Thank you for helping me calm down. I was so freaked out because while I was cleaning I found ton of blood in the billiard room. I know the body was found in a closet in the dining room, so I'm not sure why there is blood here. Unless he was killed here.", 2, "images/white.jpg", "I’m sorry, I’m extremely upset and I can’t talk to you in that state of mind. If only I could hear some flute music… that always calms me down.");
+let peacock = new Person("Mrs. Peacock", true, "I didn’t know the victim very well at all. But I think that the victim, Mr. Green and Professor Plum must have been well acquainted as they were always fighting.", 3, "images/peacock.jpg", "");
+let plum = new Person("Professor Plum", true, "I knew him quite well. We always had a lovely time debating politics. Of course, I was always right, but I will miss have someone to argue with. I hope you find his killer.", 5, "images/plum.jpg", "");
+let mustard = new Person("Colonel Mustard", false, "Thanks for the wine, it’s a most excellent vintage. You know, ever since the war, whenever I hear a gunshot I get a bit out of sorts and can’t quite function. I don’t know who could do such a thing, but I am quite sure that the only people who know how to use a gun are Mr. Green and myself.", 6, "images/mustard.jpg", "I’m altogether beside myself, and what I really need is a good bottle of wine.");
+let green = new Person("Mr. Green", true, "You are wasting your time questioning me, I don’t know anything. Please go talk to the other people to find the murderer. I’m going to finish making my dinner.", 8, "images/green.jpg", "");
 
 
 const personArray = { 0: scarlet, 1: null, 2: white, 3: peacock, 4: null, 5: plum, 6: mustard, 7: null, 8: green };

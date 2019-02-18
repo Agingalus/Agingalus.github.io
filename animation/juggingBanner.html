@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Juggling ball banner</title>
+    <link rel="stylesheet" href="juggingBanner.css">
+</head>
+
+<body>
+    <div id="banner">
+        <div id="personRunning"></div>
+        <div id="bounce"></div>
+        <div id="tired">
+            <span id="t1">T</span><span id="t2">i</span><span id="t3">r</span><span id="t4">e</span><span id="t5">d</span><span id="t6">e</span><span id="t7">d</span>
+
+            <span id="t8">o</span><span id="t9">f</span>
+
+            <span id="t10">h</span><span id="t11">a</span><span id="t12">v</span><span id="t13">i</span><span id="t14">n</span><span id="t15">g</span>
+
+            <span id="t16"> y</span><span id="t17">o</span><span id="t18">u</span><span id="t45">r</span>
+
+            <span id="t19"> j</span><span id="t20">u</span><span id="t21">g</span><span id="t22">g</span><span id="t23">l</span><span id="t24">i</span><span id="t25">n</span><span id="t26">g</span>
+            <span id="t27"> b</span><span id="t28">a</span><span id="t29">l</span><span id="t30">l</span><span id="t31">s
+			</span>
+
+            <span id="t32"> r</span><span id="t33">u</span><span id="t34">n</span><span id="t35">n</span><span id="t36">i</span><span id="t37">n</span><span id="t38">g</span>
+
+            <span id="t39"> a</span><span id="t40">w</span><span id="t41">a</span><span id="t42">y</span><span id="t44">!</span>
+        </div>
+        <div id="new">Get new balls that dont run away!</div>
+        <div id="nonBounce"></div>
+    </div>
+    <div>
+        <img id="icon" src="img/blue-zebra.png" alt="blue zebra icon" width="210" height="210">
+    </div>
+
+
+
+    <script src="juggingBanner.js"></script>
+    <script src="../src/minified/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/easing/EasePack.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        setTimeout(start, 1000);
+
+
+        function start() {
+            let tl1 = new TimelineMax();
+            tl1.to("#bounce", 3, {
+                    left: 50,
+                    ease: Sine.easeInOut,
+
+
+                }, '+=0.2')
+                .from("#tired", 1.5, {
+
+                    top: 20,
+                    ease: Bounce.easeOut,
+
+                })
+                .to("#new", 2, {
+
+                    top: 20,
+                    ease: Power4.easeOut
+                }, "+=.2")
+                .to("#t1", 1.5, {
+                    top: 210,
+                    left: -243,
+                    rotation: 100,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t2", 1.5, {
+                    top: 210,
+                    left: -96,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t3", 1.5, {
+                    top: 210,
+                    left: 91,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t4", 1.5, {
+                    top: 210,
+                    left: 24,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t5", 1.5, {
+                    top: 210,
+                    left: 78,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t6", 1.5, {
+                    top: 210,
+                    left: 47,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t7", 1.5, {
+                    top: 210,
+                    left: -43,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t8", 1.5, {
+                    top: 210,
+                    left: 209,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t9", 1.5, {
+                    top: 210,
+                    left: -78,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t10", 1.5, {
+                    top: 210,
+                    left: -10,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t11", 1.5, {
+                    top: 210,
+                    left: -159,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t12", 1.5, {
+                    top: 210,
+                    left: -210,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t13", 1.5, {
+                    top: 210,
+                    left: -237,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t14", 1.5, {
+                    top: 210,
+                    left: 42,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t15", 1.5, {
+                    top: 210,
+                    left: 19,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t16", 1.5, {
+                    top: 210,
+                    left: -9,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t17", 1.5, {
+                    top: 210,
+                    left: 12,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t18", 1.5, {
+                    top: 210,
+                    left: 179,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t19", 1.5, {
+                    top: 210,
+                    left: 147,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t20", 1.5, {
+                    top: 210,
+                    left: 98,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t21", 1.5, {
+                    top: 210,
+                    left: -77,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t22", 1.5, {
+                    top: 210,
+                    left: -101,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t23", 1.5, {
+                    top: 210,
+                    left: 21,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t24", 1.5, {
+                    top: 210,
+                    left: 129,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+
+            .to("#t25", 1.5, {
+                    top: 210,
+                    left: 37,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t26", 1.5, {
+                    top: 210,
+                    left: -114,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t27", 1.5, {
+                    top: 210,
+                    left: -250,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t28", 1.5, {
+                    top: 210,
+                    left: -271,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t29", 1.5, {
+                    top: 210,
+                    left: 156,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t30", 1.5, {
+                    top: 210,
+                    left: 96,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t31", 1.5, {
+                    top: 210,
+                    left: 112,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t32", 1.5, {
+                    top: 210,
+                    left: 111,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t33", 1.5, {
+                    top: 210,
+                    left: 174,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t34", 1.5, {
+                    top: 210,
+                    left: -79,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t35", 1.5, {
+                    top: 210,
+                    left: -34,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t36", 1.5, {
+                    top: 210,
+                    left: -200,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t37", 1.5, {
+                    top: 210,
+                    left: -178,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t38", 1.5, {
+                    top: 210,
+                    left: 267,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t39", 1.5, {
+                    top: 210,
+                    left: 245,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+                }, "-=1.6")
+                .to("#t40", 1.5, {
+                    top: 210,
+                    left: -264,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t41", 1.5, {
+                    top: 210,
+                    left: 201,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t42", 1.5, {
+                    top: 210,
+                    left: 156,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t43", 1.5, {
+                    top: 210,
+                    left: -156,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t44", 1.5, {
+                    top: 210,
+                    left: -325,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#t45", 1.5, {
+                    top: 210,
+                    left: -358,
+                    rotation: 400,
+                    ease: Bounce.easeOut
+
+                }, "-=1.6")
+                .to("#nonBounce", 1.5, {
+                    opacity: 1
+
+
+                })
+                .to("#nonBounce", 1, {
+
+                    top: 225,
+                    ease: Power1.easeOut
+
+                });
+
+            let tl2 = new TimelineMax();
+            tl2.to(
+                "#bounce", 3, {
+                    top: 210,
+                    ease: Bounce.easeOut,
+
+
+
+                }, '+=0.1')
+        }
+
+        var icon = document.getElementById("icon");
+
+        let tl3 = new TimelineMax();
+        tl3.to("#icon", 2, {
+                ease: Back.easeOut,
+
+                rotation: 360,
+                left: 700
+            })
+            .to("#icon", 1.75, {
+                ease: Back.easeOut,
+                rotation: -0,
+                left: 250
+            }, "-=0.2")
+            .to("#icon", 1.5, {
+                ease: Back.easeOut,
+                rotation: 360,
+                left: 500
+            }, "-=0.2");
+    </script>
+</body>
+
+</html>
