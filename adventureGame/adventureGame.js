@@ -331,9 +331,9 @@ function takeItem() {
     for (let i = 0; i < itemLocations.length; i++) {
         if (curentLocation === itemLocations[i]) {
             backPack.push(items[i]);
-            itemLocations.splice(i, 1);
             gameMessage.textContent = "You have picked up the " + items[i] + ".";
-
+            itemLocations.splice(i, 1);
+            items.splice(i, 1);
         } else if (i === itemLocations.length - 1) {
             gameMessage.textContent = errorMessages[5];
         }
@@ -502,6 +502,12 @@ function saveGame() {
     }
     localStorage.setItem("arraySizeItemLocations", arraySizeItemLocations);
 
+    let arraySizeItems = items.length;
+    for (let i = 0; i < items.length; i++) {
+        localStorage.setItem("itemLocation" + i, items[i]);
+    }
+    localStorage.setItem("arraySizeItems", arraySizeItems);
+
 }
 
 function loadGame() {
@@ -512,6 +518,10 @@ function loadGame() {
     mustard.happy = (localStorage.getItem("isMustardHappy") == "true");
     white.happy = (localStorage.getItem("isWhiteHappy") == "true");
     curentLocation = parseInt(localStorage.getItem("curentLocation"));
+    if (isNaN(curentLocation)) {
+        curentLocation = 7;
+    }
+
     sound = (localStorage.getItem("wantSound") == "true");
     unlocked = localStorage.getItem("unlocked") == "true";
 
@@ -519,6 +529,19 @@ function loadGame() {
 
     for (let i = 0; i < arraySizeItemLocations; i++) {
         itemLocations[i] = parseInt(localStorage.getItem("itemLocation" + i));
+    }
+
+    let arraySizeItems = localStorage.getItem("arraySizeItems");
+
+    for (let i = 0; i < arraySizeItems; i++) {
+        items[i] = parseInt(localStorage.getItem("itemLocation" + i));
+
+    }
+    if (isNaN(items[0])) {
+        items = ["wine bottle", "flute"];
+    }
+    if (isNaN(itemLocations[0])) {
+        itemLocations = [1, 4];
     }
     playSound(theme);
     displayRoom();
@@ -532,7 +555,7 @@ function restartGame() {
     sound = true;
     playSound(theme);
     itemLocations = [1, 4];
-
+    items = ["wine bottle", "flute"];
     unlocked = false;
     displayRoom();
     saveGame();
