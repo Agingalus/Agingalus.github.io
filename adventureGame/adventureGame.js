@@ -48,7 +48,7 @@ let itemLocations = [1, 4];
 
 const map = ["Ballroom", "Dining Room", "Billiard Room", "Study", "Lounge", "Conservatory", "Library", "Hall", "Kitchen"];
 
-const actions = ["north", "east", "south", "west", "take secret passage", "help", "take", "give", "unlock door", "talk", "hint", "play flute", "backpack", "map"];
+const actions = ["north", "south", "east", "west", "take secret passage", "help", "take", "give", "unlock door", "talk", "hint", "play flute", "backpack", "map"];
 
 
 // event listeners
@@ -69,7 +69,7 @@ muteBtn.addEventListener("click", function() { mute(theme); }, false);
 
 
 
-const locationDiscription = { 0: "A place of frivolity and dancing. You see Miss Scarlet practicing you dance.", 1: "An opportunity to experience culinary excellence. You might be able to find something do drink here.", 2: "A place of challenging gamesmanship. You see Mrs. White sitting on a chair looking like she just finished crying.", 3: "The center of knowledge and wisdom. You see Mrs. Peacock readin a murder mystary novel.", 4: "An island of relaxation from the busy pace of everyday life. You see musical instruments scattered all around the room. ", 5: "Exposure to the sights and scents of flowers can restore the soul. You see Professor Plum sitting on a examining all of the different plantlife.", 6: "A repository of knowledge that will enrich your mind and inspire your heart. Colonel Mustard is browsing all of the shelves.", 7: "The long passage connecting other rooms", 8: "The source of all things culinary and delightfully tasty! Mr. Green seems to have gotten hungry and is attempting to make himself dinner." };
+const locationDiscription = { 0: "A place of frivolity and dancing. You see Miss Scarlet practicing her dance.", 1: "An opportunity to experience culinary excellence. You might be able to find something to drink here.", 2: "A place of challenging gamesmanship. You see Mrs. White sitting on a chair looking like she just finished crying.", 3: "The center of knowledge and wisdom. You see Mrs. Peacock reading a murder mystery novel.", 4: "An island of relaxation from the busy pace of everyday life. You see musical instruments scattered all around the room. ", 5: "Exposure to the sights and scents of flowers can restore the soul. You see Professor Plum sitting on a examining all of the different plantlife.", 6: "A repository of knowledge that will enrich your mind and inspire your heart. Colonel Mustard is browsing all of the shelves.", 7: "The long passage connecting other rooms", 8: "The source of all things culinary and delightfully tasty! Mr. Green seems to have gotten hungry and is attempting to make himself dinner." };
 
 const locationImage = ["images/ballroom.jpg", "images/diningroom.jpg", "images/BilliardRoom.jpg", "images/study.jpg", "images/lounge.jpg", "images/conservitory.jpg", "images/library.jpg", "images/hall.jpg", "images/kitchen.jpg"];
 
@@ -111,13 +111,12 @@ class Person {
         this.notHappyClue = notHappyClue;
     }
 }
-let scarlet = new Person("Miss Scarlet", true, "I was in the Conservatory at the time of the murder, so I didn’t see or hear anything. I did notice that Mr. Green seemed surprisingly calm when he heard about the murder. Everyone else was in shock. I’m afraid that’s all I can tell you.", 0, "images/white.jpg", "");
-let white = new Person("Mrs. White", false, "Thank you for helping me calm down. I was so freaked out because while I was cleaning I found ton of blood in the billiard room. I know the body was found in a closet in the dining room, so I'm not sure why there is blood here. Unless he was killed here.", 2, "images/white.jpg", "I’m sorry, I’m extremely upset and I can’t talk to you in that state of mind. If only I could hear some flute music… that always calms me down.");
-let peacock = new Person("Mrs. Peacock", true, "I didn’t know the victim very well at all. But I think that the victim, Mr. Green and Professor Plum must have been well acquainted as they were always fighting.", 3, "images/peacock.jpg", "");
-let plum = new Person("Professor Plum", true, "I knew him quite well. We always had a lovely time debating politics. Of course, I was always right, but I will miss have someone to argue with. I hope you find his killer.", 5, "images/plum.jpg", "");
-let mustard = new Person("Colonel Mustard", false, "Thanks for the wine, it’s a most excellent vintage. You know, ever since the war, whenever I hear a gunshot I get a bit out of sorts and can’t quite function. I don’t know who could do such a thing, but I am quite sure that the only people who know how to use a gun are Mr. Green and myself.", 6, "images/mustard.jpg", "I’m altogether beside myself, and what I really need is a good bottle of wine.");
 let green = new Person("Mr. Green", true, "You are wasting your time questioning me, I don’t know anything. Please go talk to the other people to find the murderer. I’m going to finish making my dinner.", 8, "images/green.jpg", "");
-
+let mustard = new Person("Colonel Mustard", false, "Thanks for the wine, it’s a most excellent vintage. You know, ever since the war, whenever I hear a gunshot I get a bit out of sorts and can’t quite function. I don’t know who could do such a thing, but I am quite sure that the only people who know how to use a gun are Mr. Green and myself. Here take this key that, it will get you into the Billiard Room.", 6, "images/mustard.jpg", "I’m altogether beside myself, and what I really need is a good bottle of wine.");
+let peacock = new Person("Mrs. Peacock", true, "I didn’t know the victim very well at all. But I think that the victim, Mr. Green and Professor Plum must have been well acquainted as they were always arguing.", 3, "images/peacock.jpg", "");
+let plum = new Person("Professor Plum", true, "I knew him quite well. We always had a lovely time debating politics. Of course, I was always right, but I will miss have someone to argue with. I hope you find his killer.", 5, "images/plum.jpg", "");
+let scarlet = new Person("Miss Scarlet", true, "I was in the Conservatory at the time of the murder, so I didn’t see or hear anything. Later, when we were told about the murder, I did notice that Mr. Green seemed surprisingly calm when he heard the news. Everyone else was in shock. I’m afraid that’s all I can tell you.", 0, "images/scarlet.jpg", "");
+let white = new Person("Mrs. White", false, "Thank you for helping me calm down. I was so freaked out because while I was cleaning I found ton of blood in the billiard room. I know the body was found in a closet in the dining room, so I'm not sure why there is blood here. Unless he was killed here.", 2, "images/white.jpg", "I’m sorry, I’m extremely upset and I can’t talk to you in that state of mind. If only I could hear some flute music… that always calms me down.");
 
 const personArray = { 0: scarlet, 1: null, 2: white, 3: peacock, 4: null, 5: plum, 6: mustard, 7: null, 8: green };
 
@@ -286,6 +285,8 @@ function solveIt() {
     introDisplay.style.display = "none";
     gameDisplay.style.display = "none";
     solution.style.display = "block";
+    choice.style.display = "block";
+    wrong.style.display = "none";
 }
 // this will diplays the messege of the perosn in the room depending on their state of happyness
 function talkToPerson() {
@@ -344,7 +345,7 @@ function typeWriterHappy() {
 
         printClue.textContent += personArray[curentLocation].happyClue.charAt(counter);
         counter++;
-        setTimeout(typeWriterHappy, 75);
+        setTimeout(typeWriterHappy, 50);
     }
 }
 
@@ -354,7 +355,7 @@ function typeWriterNotHappy() {
 
         printClue.textContent += personArray[curentLocation].notHappyClue.charAt(counter);
         counter++;
-        setTimeout(typeWriterNotHappy, 75);
+        setTimeout(typeWriterNotHappy, 50);
     }
 }
 //validates if the door is unlocked already or if there is a door to unlock and unlocks it
@@ -441,10 +442,15 @@ function valadateMovment(choice) {
         case "play flute":
 
             if (hasFlute()) {
-                playSoundDuration(fluteMusic, 5000);
+                if (sound) {
+                    playSoundDuration(fluteMusic, 5000);
+                }
+
                 if (curentLocation === 2 && white.happy === false) {
-                    white.happy === true;
+                    white.happy = true;
+
                     talkToPerson();
+
                 } else {
                     gameMessage.textContent = "Although you play the flute beautifuly, no one is paying attention to you.";
                 }
@@ -455,6 +461,8 @@ function valadateMovment(choice) {
             break;
         case "map":
             personImgPrint.innerHTML = "<img src=\"images/map.png\" alt=\"Map\" >";
+            printClue.textContent = "";
+
             break;
         case "backpack":
 
@@ -508,8 +516,9 @@ function loadGame() {
     unlocked = localStorage.getItem("unlocked") == "true";
 
     let arraySizeItemLocations = localStorage.getItem("arraySizeItemLocations");
+
     for (let i = 0; i < arraySizeItemLocations; i++) {
-        itemLocations[i] = localStorage.getItem("itemLocation" + i);
+        itemLocations[i] = parseInt(localStorage.getItem("itemLocation" + i));
     }
     playSound(theme);
     displayRoom();
