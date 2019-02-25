@@ -40,7 +40,7 @@ function clearIt() {
 
 // validates the number and then adds it to the array, also clears the input box
 function addit() {
-    let numberToAdd = document.querySelector('input[name="addNumber"]').value;
+    let numberToAdd = document.querySelector("input[name='addNumber']").value;
     if (Number(numberToAdd)) {
         userArray.push(numberToAdd);
         printArray(userArray, original);

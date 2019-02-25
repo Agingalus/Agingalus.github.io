@@ -1,16 +1,23 @@
 @charset "UTF-8";
 body {
     text-align: center;
-    margin: 5%;
+    margin: 3%;
     margin-top: 5%;
     background-color: rgb(25, 191, 197);
+    font-family: sans-serif;
+    font-size: 110%;
 }
 
-#diologSection {
-    padding-top: 200px;
-    max-width: 400px;
-    min-width: 20%;
-    text-align: left;
+button {
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px 3px rgba(255, 255, 255, 0.2);
+    background: -webkit-linear-gradient(top, #4d3f3f, rgb(31, 32, 31));
+    padding: 4px 8px;
+}
+
+#helpBtn {
+    cursor: help;
 }
 
 #form1 {
@@ -19,16 +26,50 @@ body {
 
 #allDetails {
     display: none;
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#diologSection {
+    padding-top: 200px;
+    width: 400px;
+    text-align: left;
+    float: right;
+}
+
+#mapDisplay {
+    float: left;
+    width: 500px;
 }
 
 #intro {
     display: block;
     margin: 20%;
     margin-top: 5%;
-    font-family: sans-serif;
     font-size: 150%;
 }
 
+#messageArea {
+    height: 110px;
+}
+
 #solution {
+    display: none;
+}
+
+footer {
+    position: relative;
+    min-width: 100%;
+    clear: both;
+    padding-top: 6%;
+}
+
+#congrats {
+    display: none;
+    height: 900px;
+}
+
+#wrong {
     display: none;
 }

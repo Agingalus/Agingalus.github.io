@@ -25,27 +25,51 @@ const saveIt = document.getElementById("saveIt");
 const loadIt = document.getElementById("loadIt");
 const restartIt = document.getElementById("restartIt");
 const sumbit = document.getElementById("submit");
+const helpBtn = document.getElementById("helpBtn");
+const muteBtn = document.getElementById("muteBtn");
+const theme = document.getElementById("theme");
+const congrats = document.getElementById("congrats");
+const choice = document.getElementById("choice");
+const wrong = document.getElementById("wrong");
+
+
+//variables
+let guessPerson;
+let guessWepon;
+let guessPlace;
+let sound = true;
+let backPack = [];
+let curentLocation = 7;
+let unlocked = false;
+let counter = 0;
+let helpText;
+let items = ["wine bottle", "flute"];
+let itemLocations = [1, 4];
+
+const map = ["Ballroom", "Dining Room", "Billiard Room", "Study", "Lounge", "Conservatory", "Library", "Hall", "Kitchen"];
+
+const actions = ["north", "east", "south", "west", "take secret passage", "help", "take", "give", "unlock door", "talk", "hint", "play flute", "backpack", "map"];
 
 
 // event listeners
 
 sumbit.addEventListener("click", changeRoom, false);
 play.addEventListener("click", playGame, false);
+
 solve.addEventListener("click", solveIt, false);
 answer.addEventListener("click", checkAnswer, false);
 back.addEventListener("click", playGame, false);
 saveIt.addEventListener("click", saveGame, false);
 loadIt.addEventListener("click", loadGame, false);
 restartIt.addEventListener("click", restartGame, false);
+helpBtn.addEventListener("click", function() { gameMessage.textContent = helpText; }, false);
+muteBtn.addEventListener("click", function() { mute(theme); }, false);
 
 
-// constents
-const items = ["wine bottle", "flute"];
-const itemLocations = [1, 4];
 
-const map = ["Ballroom", "Dining Room", "Billiard Room", "Study", "Lounge", "Conservatory", "Library", "Hall", "Kitchen"];
 
-const locationDiscription = ["A place of frivolity and dancing", "An opportunity to experience culinary excellence", "A place of challenging gamesmanship", "The center of knowledge and wisdom", "An island of relaxation from the busy pace of everyday life", "Exposure to the sights and scents of flowers can restore the soul", "A repository of knowledge that will enrich your mind and inspire your heart", "The long passage connecting other rooms", "The source of all things culinary and delightfully tasty!"];
+
+const locationDiscription = { 0: "A place of frivolity and dancing. You see Miss Scarlet practicing you dance.", 1: "An opportunity to experience culinary excellence. You might be able to find something do drink here.", 2: "A place of challenging gamesmanship. You see Mrs. White sitting on a chair looking like she just finished crying.", 3: "The center of knowledge and wisdom. You see Mrs. Peacock readin a murder mystary novel.", 4: "An island of relaxation from the busy pace of everyday life. You see musical instruments scattered all around the room. ", 5: "Exposure to the sights and scents of flowers can restore the soul. You see Professor Plum sitting on a examining all of the different plantlife.", 6: "A repository of knowledge that will enrich your mind and inspire your heart. Colonel Mustard is browsing all of the shelves.", 7: "The long passage connecting other rooms", 8: "The source of all things culinary and delightfully tasty! Mr. Green seems to have gotten hungry and is attempting to make himself dinner." };
 
 const locationImage = ["images/ballroom.jpg", "images/diningroom.jpg", "images/BilliardRoom.jpg", "images/study.jpg", "images/lounge.jpg", "images/conservitory.jpg", "images/library.jpg", "images/hall.jpg", "images/kitchen.jpg"];
 
@@ -67,27 +91,15 @@ const errorMessages = {
 };
 
 
-const actions = ["north", "east", "south", "west", "take secret passage", "help", "take", "give", "unlock door", "talk", "hint", "play flute"];
 
-
-
-//variables
-let guessPerson;
-let guessWepon;
-let guessPlace;
-let sound = true;
-let backPack = [];
-let curentLocation = 7;
-let unlocked = false;
-let counter = 0;
-
-let helpText;
+// create help text
 helpText = "You can enter: " + actions[0];
 for (let i = 1; i < actions.length; i++) {
     helpText += ", " + actions[i];
 }
 helpText += ".";
 
+// people
 class Person {
 
     constructor(name, happy, happyClue, room, picture, notHappyClue) {
@@ -136,9 +148,14 @@ function changeRoom() {
 // validates the guesses of the user
 function checkAnswer() {
     if (guessPerson === "green" && guessPlace === "billiardRoom" && guessWepon === "revolver") {
-        console.log("you win!");
+        congrats.style.display = "block";
+        introDisplay.style.display = "none";
+        gameDisplay.style.display = "none";
+        solution.style.display = "none";
     } else {
-        console.log("you lose");
+        choice.style.display = "none";
+        wrong.style.display = "block";
+
     }
 }
 
@@ -146,7 +163,7 @@ function checkAnswer() {
 function displayRoom() {
     printLocation.textContent = map[curentLocation];
     printDiscription.textContent = locationDiscription[curentLocation];
-    printImage.innerHTML = "<img src= \"" + locationImage[curentLocation] + "\" alt=\"" + map[curentLocation] + "\"" + "height=\"700\" width=\"700\" " + ">";
+    printImage.innerHTML = "<img src= \"" + locationImage[curentLocation] + "\" alt=\"" + map[curentLocation] + "\"" + "height=\"500\" width=\"500\" " + ">";
     personImgPrint.textContent = "";
     printClue.textContent = "";
 }
@@ -169,6 +186,8 @@ function give() {
                 talkToPerson();
                 itemLocations.push(6);
                 items.push("key");
+            } else if (i === backPack.length - 1) {
+                gameMessage.textContent = errorMessages[8];
             }
         }
     } else {
@@ -184,13 +203,20 @@ function hasKey() {
     }
 }
 
+function hasFlute() {
+    for (let i = 0; i < backPack.length; i++) {
+        if (backPack[i] === "flute") {
+            return true;
+        }
+    }
+}
+
 // if user enter "hint" depending on room what it displays
 function hint(room) {
     switch (room) {
         case 0:
         case 2:
         case 3:
-        case 7:
         case 8:
             hintPrint.textContent = talkHelp;
             break;
@@ -204,6 +230,9 @@ function hint(room) {
         case 5:
             hintPrint.innerHTML = talkHelp + "<p> " + needKey + "</p>";
             break;
+        case 7:
+            hintPrint.textContent = "Move to a different room.";
+            break;
     }
 }
 
@@ -212,35 +241,44 @@ function mute(music) {
     if (sound === true) {
         sound = false;
         music.volume = 0;
+
+
     } else {
         sound = true;
-        music.volume = 0.3;
+
     }
+    playSound(music);
 }
 
-//swiches screen to game scree
+//switches screen to game scree
 function playGame() {
     introDisplay.style.display = "none";
     gameDisplay.style.display = "block";
     solution.style.display = "none";
+
+    loadGame();
 }
+
 //plays sound if sound it off or turns sound on if off
 function playSound(music) {
-    let audio = document.createElement("audio");
-    audio.src = music;
+    if (sound) {
+        music.play();
+        music.volume = 0.3;
+    }
 
-    audio.play();
-    audio.volume = 0.3;
-    mute(music);
+
 }
 // plays sound for spisific duration
 function playSoundDuration(music, duration) {
     let audio = document.createElement("audio");
     audio.src = music;
+    theme.volume = 0.05;
 
     audio.play();
     audio.volume = 0.3;
     setTimeout(function() { audio.muted = true; }, duration, audio);
+
+    theme.volume = 0.3;
 }
 
 // displays the solution screen
@@ -285,11 +323,16 @@ function takePassage() {
 
 // adds the item in the room to the array backPack
 function takeItem() {
+    if (itemLocations.length === 0) {
+        gameMessage.textContent = errorMessages[5];
+
+    }
     for (let i = 0; i < itemLocations.length; i++) {
         if (curentLocation === itemLocations[i]) {
             backPack.push(items[i]);
+            itemLocations.splice(i, 1);
             gameMessage.textContent = "You have picked up the " + items[i] + ".";
-            break;
+
         } else if (i === itemLocations.length - 1) {
             gameMessage.textContent = errorMessages[5];
         }
@@ -396,17 +439,39 @@ function valadateMovment(choice) {
             give();
             break;
         case "play flute":
-            playSoundDuration(fluteMusic, 5000);
-            if (curentLocation === 2 && white.happy === false) {
-                white.happy === true;
-                talkToPerson();
+
+            if (hasFlute()) {
+                playSoundDuration(fluteMusic, 5000);
+                if (curentLocation === 2 && white.happy === false) {
+                    white.happy === true;
+                    talkToPerson();
+                } else {
+                    gameMessage.textContent = "Although you play the flute beautifuly, no one is paying attention to you.";
+                }
             } else {
-                gameMessage.textContent = "Although you play the flute beautifuly, no one is paying attention to you.";
+                gameMessage.textContent = "You dont have a flute.";
+            }
+
+            break;
+        case "map":
+            personImgPrint.innerHTML = "<img src=\"images/map.png\" alt=\"Map\" >";
+            break;
+        case "backpack":
+
+            if (backPack.length === 0) {
+                gameMessage.textContent = " You do not have anything in your backpack.";
+            } else {
+                gameMessage.textContent = " Items in your backpack: " + backPack[0];
+                for (let i = 1; i < backPack.length; i++) {
+                    gameMessage.textContent += ", " + backPack[i];
+
+                }
+                gameMessage.textContent += ".";
             }
             break;
-        default:
-            console.log("error");
-            break;
+
+
+
     }
 }
 
@@ -416,24 +481,38 @@ function saveGame() {
     for (let i = 0; i < backPack.length; i++) {
         localStorage.setItem("backPack" + i, backPack[i]);
     }
+    localStorage.setItem("arraySizeBackPack", arraySize);
     localStorage.setItem("isMustardHappy", mustard.happy);
     localStorage.setItem("isWhiteHappy", white.happy);
     localStorage.setItem("curentLocation", curentLocation);
     localStorage.setItem("wantSound", sound);
     localStorage.setItem("unlocked", unlocked);
-    localStorage.setItem("arraySize", arraySize);
+
+    let arraySizeItemLocations = itemLocations.length;
+    for (let i = 0; i < itemLocations.length; i++) {
+        localStorage.setItem("itemLocation" + i, itemLocations[i]);
+    }
+    localStorage.setItem("arraySizeItemLocations", arraySizeItemLocations);
+
 }
 
 function loadGame() {
-    let arraySize = localStorage.getItem("arraySize");
-    for (let i = 0; i < arraySize; i++) {
+    let arraySizeBackPack = localStorage.getItem("arraySizeBackPack");
+    for (let i = 0; i < arraySizeBackPack; i++) {
         backPack[i] = localStorage.getItem("backPack" + i);
     }
-    mustard.happy = localStorage.getItem("isMustardHappy");
-    white.happy = localStorage.getItem("isWhiteHappy");
-    curentLocation = localStorage.getItem("curentLocation");
-    sound = localStorage.getItem("wantSound");
-    unlocked = localStorage.getItem("unlocked");
+    mustard.happy = (localStorage.getItem("isMustardHappy") == "true");
+    white.happy = (localStorage.getItem("isWhiteHappy") == "true");
+    curentLocation = parseInt(localStorage.getItem("curentLocation"));
+    sound = (localStorage.getItem("wantSound") == "true");
+    unlocked = localStorage.getItem("unlocked") == "true";
+
+    let arraySizeItemLocations = localStorage.getItem("arraySizeItemLocations");
+    for (let i = 0; i < arraySizeItemLocations; i++) {
+        itemLocations[i] = localStorage.getItem("itemLocation" + i);
+    }
+    playSound(theme);
+    displayRoom();
 }
 
 function restartGame() {
@@ -442,13 +521,10 @@ function restartGame() {
     white.happy = false;
     curentLocation = 7;
     sound = true;
+    playSound(theme);
+    itemLocations = [1, 4];
+
     unlocked = false;
+    displayRoom();
+    saveGame();
 }
-
-//const wepons = ["lead pipe", "rope", "candle stick", "knife", "wrench", "revolver"];
-
-//const people = ["Mrs. Peacock", "Mr. Green", "Mrs. White", "Professor Plum", "Coronel Mustard", "Miss Scarlet"];
-//people dont think i need this
-//let personRoom = [0, 2, 3, 5, 6, 8];
-//let pesonName = ["Miss Scarlet", "Mrs. White", "Mrs. Peacock", "Professor Plum", "Colonel Mustard", "Mr. Green"];
-// look at this later https://codepen.io/linrock/pen/Amdhr
