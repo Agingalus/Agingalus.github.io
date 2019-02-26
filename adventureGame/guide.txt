@@ -1,4 +1,4 @@
-Current way to go as of 2/14/18 3:34pm
+Current way to go as of 2/25/18 11:34pm
 
 north
 take item(take flute)
@@ -20,5 +20,3 @@ play flute
 talk 
 then hit solve the muder
 Mr. green with the Revolver in the Billard Room
-so far the only way you know you got it is the console says You win!
-still working on the rest.
