@@ -31,6 +31,7 @@ const theme = document.getElementById("theme");
 const congrats = document.getElementById("congrats");
 const choice = document.getElementById("choice");
 const wrong = document.getElementById("wrong");
+const replay = document.getElementById("replay");
 
 
 //variables
@@ -58,12 +59,14 @@ play.addEventListener("click", playGame, false);
 
 solve.addEventListener("click", solveIt, false);
 answer.addEventListener("click", checkAnswer, false);
-back.addEventListener("click", playGame, false);
+back.addEventListener("click", backToGame, false);
 saveIt.addEventListener("click", saveGame, false);
 loadIt.addEventListener("click", loadGame, false);
 restartIt.addEventListener("click", restartGame, false);
 helpBtn.addEventListener("click", function() { gameMessage.textContent = helpText; }, false);
 muteBtn.addEventListener("click", function() { mute(theme); }, false);
+replay.addEventListener("click", restartGame, false);
+
 
 
 
@@ -120,6 +123,11 @@ let white = new Person("Mrs. White", false, "Thank you for helping me calm down.
 
 const personArray = { 0: scarlet, 1: null, 2: white, 3: peacock, 4: null, 5: plum, 6: mustard, 7: null, 8: green };
 
+function backToGame() {
+    introDisplay.style.display = "none";
+    gameDisplay.style.display = "block";
+    solution.style.display = "none";
+}
 //start game  function callsed
 displayRoom();
 introHelp.textContent = helpText;
@@ -252,8 +260,11 @@ function mute(music) {
 //switches screen to game scree
 function playGame() {
     introDisplay.style.display = "none";
-    gameDisplay.style.display = "block";
+    congrats.style.display = "none";
     solution.style.display = "none";
+    gameDisplay.style.display = "block";
+
+
 
     loadGame();
 }
@@ -288,7 +299,7 @@ function solveIt() {
     choice.style.display = "block";
     wrong.style.display = "none";
 }
-// this will diplays the messege of the perosn in the room depending on their state of happyness
+// this will displays the messege of the perosn in the room depending on their state of happyness
 function talkToPerson() {
     printClue.textContent = "";
     counter = 0;
@@ -442,9 +453,9 @@ function valadateMovment(choice) {
         case "play flute":
 
             if (hasFlute()) {
-                if (sound) {
-                    playSoundDuration(fluteMusic, 5000);
-                }
+
+                playSoundDuration(fluteMusic, 5000);
+
 
                 if (curentLocation === 2 && white.happy === false) {
                     white.happy = true;
@@ -548,15 +559,20 @@ function loadGame() {
 }
 
 function restartGame() {
+    theme.volume = 0;
     backPack = [];
     mustard.happy = false;
     white.happy = false;
     curentLocation = 7;
     sound = true;
-    playSound(theme);
     itemLocations = [1, 4];
     items = ["wine bottle", "flute"];
     unlocked = false;
     displayRoom();
     saveGame();
+    gameMessage.textContent = "";
+    introDisplay.style.display = "block";
+    gameDisplay.style.display = "none";
+    solution.style.display = "none";
+    congrats.style.display = "none";
 }
