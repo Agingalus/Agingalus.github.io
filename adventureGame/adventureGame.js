@@ -47,30 +47,10 @@ let helpText;
 let items = ["wine bottle", "flute"];
 let itemLocations = [1, 4];
 
+//const 
 const map = ["Ballroom", "Dining Room", "Billiard Room", "Study", "Lounge", "Conservatory", "Library", "Hall", "Kitchen"];
 
 const actions = ["north", "south", "east", "west", "take secret passage", "help", "take", "give", "unlock door", "talk", "hint", "play flute", "backpack", "map"];
-
-
-// event listeners
-
-sumbit.addEventListener("click", changeRoom, false);
-play.addEventListener("click", playGame, false);
-
-solve.addEventListener("click", solveIt, false);
-answer.addEventListener("click", checkAnswer, false);
-back.addEventListener("click", backToGame, false);
-saveIt.addEventListener("click", saveGame, false);
-loadIt.addEventListener("click", loadGame, false);
-restartIt.addEventListener("click", restartGame, false);
-helpBtn.addEventListener("click", function() { gameMessage.textContent = helpText; }, false);
-muteBtn.addEventListener("click", function() { mute(theme); }, false);
-replay.addEventListener("click", restartGame, false);
-
-
-
-
-
 
 const locationDiscription = { 0: "A place of frivolity and dancing. You see Miss Scarlet practicing her dance.", 1: "An opportunity to experience culinary excellence. You might be able to find something to drink here.", 2: "A place of challenging gamesmanship. You see Mrs. White sitting on a chair looking like she just finished crying.", 3: "The center of knowledge and wisdom. You see Mrs. Peacock reading a murder mystery novel.", 4: "An island of relaxation from the busy pace of everyday life. You see musical instruments scattered all around the room. ", 5: "Exposure to the sights and scents of flowers can restore the soul. You see Professor Plum sitting on a examining all of the different plantlife.", 6: "A repository of knowledge that will enrich your mind and inspire your heart. Colonel Mustard is browsing all of the shelves.", 7: "The long passage connecting other rooms", 8: "The source of all things culinary and delightfully tasty! Mr. Green seems to have gotten hungry and is attempting to make himself dinner." };
 
@@ -93,7 +73,18 @@ const errorMessages = {
     9: "There is no one in this room."
 };
 
-
+// event listeners
+sumbit.addEventListener("click", changeRoom, false);
+play.addEventListener("click", playGame, false);
+solve.addEventListener("click", solveIt, false);
+answer.addEventListener("click", checkAnswer, false);
+back.addEventListener("click", backToGame, false);
+saveIt.addEventListener("click", saveGame, false);
+loadIt.addEventListener("click", loadGame, false);
+restartIt.addEventListener("click", restartGame, false);
+helpBtn.addEventListener("click", function() { gameMessage.textContent = helpText; }, false);
+muteBtn.addEventListener("click", function() { mute(theme); }, false);
+replay.addEventListener("click", restartGame, false);
 
 // create help text
 helpText = "You can enter: " + actions[0];
@@ -120,9 +111,9 @@ let peacock = new Person("Mrs. Peacock", true, "I didn’t know the victim very 
 let plum = new Person("Professor Plum", true, "I knew him quite well. We always had a lovely time debating politics. Of course, I was always right, but I will miss have someone to argue with. I hope you find his killer.", 5, "images/plum.jpg", "");
 let scarlet = new Person("Miss Scarlet", true, "I was in the Conservatory at the time of the murder, so I didn’t see or hear anything. Later, when we were told about the murder, I did notice that Mr. Green seemed surprisingly calm when he heard the news. Everyone else was in shock. I’m afraid that’s all I can tell you.", 0, "images/scarlet.jpg", "");
 let white = new Person("Mrs. White", false, "Thank you for helping me calm down. I was so freaked out because while I was cleaning I found ton of blood in the billiard room. I know the body was found in a closet in the dining room, so I'm not sure why there is blood here. Unless he was killed here.", 2, "images/white.jpg", "I’m sorry, I’m extremely upset and I can’t talk to you in that state of mind. If only I could hear some flute music… that always calms me down.");
-
+// array of people in rooms corilating to room number
 const personArray = { 0: scarlet, 1: null, 2: white, 3: peacock, 4: null, 5: plum, 6: mustard, 7: null, 8: green };
-
+// brings back to game from solve screen
 function backToGame() {
     introDisplay.style.display = "none";
     gameDisplay.style.display = "block";
@@ -133,6 +124,7 @@ displayRoom();
 introHelp.textContent = helpText;
 
 // ************* functions in a-z order **************
+//  save game features at bottem
 
 //validates and reacts for user put and resets form
 function changeRoom() {
@@ -209,7 +201,7 @@ function hasKey() {
         }
     }
 }
-
+//validates flute in backpack
 function hasFlute() {
     for (let i = 0; i < backPack.length; i++) {
         if (backPack[i] === "flute") {
@@ -243,7 +235,7 @@ function hint(room) {
     }
 }
 
-// allows the user to mute all noise
+// allows the user to mute theme
 function mute(music) {
     if (sound === true) {
         sound = false;
@@ -257,15 +249,12 @@ function mute(music) {
     playSound(music);
 }
 
-//switches screen to game scree
+//switches screen to game screen
 function playGame() {
     introDisplay.style.display = "none";
     congrats.style.display = "none";
     solution.style.display = "none";
     gameDisplay.style.display = "block";
-
-
-
     loadGame();
 }
 
@@ -275,8 +264,6 @@ function playSound(music) {
         music.play();
         music.volume = 0.3;
     }
-
-
 }
 // plays sound for spisific duration
 function playSoundDuration(music, duration) {
@@ -451,15 +438,10 @@ function valadateMovment(choice) {
             give();
             break;
         case "play flute":
-
             if (hasFlute()) {
-
                 playSoundDuration(fluteMusic, 5000);
-
-
                 if (curentLocation === 2 && white.happy === false) {
                     white.happy = true;
-
                     talkToPerson();
 
                 } else {
@@ -468,29 +450,22 @@ function valadateMovment(choice) {
             } else {
                 gameMessage.textContent = "You dont have a flute.";
             }
-
             break;
         case "map":
             personImgPrint.innerHTML = "<img src=\"images/map.png\" alt=\"Map\" >";
             printClue.textContent = "";
-
             break;
         case "backpack":
-
             if (backPack.length === 0) {
                 gameMessage.textContent = " You do not have anything in your backpack.";
             } else {
                 gameMessage.textContent = " Items in your backpack: " + backPack[0];
                 for (let i = 1; i < backPack.length; i++) {
                     gameMessage.textContent += ", " + backPack[i];
-
                 }
                 gameMessage.textContent += ".";
             }
             break;
-
-
-
     }
 }
 
