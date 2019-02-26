@@ -20,3 +20,5 @@ play flute
 talk 
 then hit solve the muder
 Mr. green with the Revolver in the Billard Room
+
+you can also talk to all of the other people to help get clues of who the muderer is
