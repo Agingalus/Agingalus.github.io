@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQueryAnimate</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="jQueryAnimate.css">
+
+</head>
+
+<body>
+    <div>
+        <img id="tree" src="tree.jpg" alt="Tree">
+    </div>
+    <div id="buttons">
+        <button id="btnRollRight"> Move Right</button>
+        <button id="btnRollLeft">Move Left</button>
+        <button id="btnFadeOut">Fade out</button>
+        <button id="btnFadeIn">Fade in</button>
+
+    </div>
+
+
+    <script src="../jQuery/jQuery-min.js"></script>
+    <script src="jQueryAnimate.js"></script>
+    <script>
+        let tree = document.getElementById("tree");
+
+
+        $("#btnRollRight").click(function() {
+            if (tree.style.left != Math.round((window.innerWidth - 300) / 100) * 100 + "px") {
+                $("#tree").animate({
+
+                        left: "+=100px"
+                    },
+                    1000
+                );
+            }
+
+        });
+
+        $("#btnRollLeft").click(function() {
+
+
+            if (tree.style.left != "0px") {
+
+                $("#tree").animate({
+
+                        left: "-=100px"
+                    },
+                    1000
+                );
+
+            }
+
+
+        });
+        $("#btnFadeOut").click(function() {
+            $("#tree").fadeOut(2000)
+        });
+        $("#btnFadeIn").click(function() {
+            $("#tree").fadeIn(2000)
+        });
+
+
+        //let tree = $("#tree").show();
+
+        // function rollRight() {
+        //     $("#tree").animate({
+        //         "right": "200px"
+        //     });
+        // }
+    </script>
+</body>
+
+</html>

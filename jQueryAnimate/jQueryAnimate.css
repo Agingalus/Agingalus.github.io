@@ -1,0 +1,30 @@
+div {
+    padding-top: 100px;
+    text-emphasis: center;
+    position: absolute;
+}
+
+body {
+    text-align: center;
+    position: relative;
+    background: rgba(172, 255, 47, 0.678)
+}
+
+#tree {
+    top: 100px;
+    left: 500px;
+    position: absolute;
+}
+
+#buttons {
+    top: 250px;
+    left: 500px;
+}
+
+button {
+    size: 20px;
+    font-size: 15px;
+    border-radius: 3px;
+    color: whitesmoke;
+    background: gray;
+}
