@@ -29,7 +29,7 @@
     <script>
         let tree = document.getElementById("tree");
 
-
+        //shifts over item to right
         $("#btnRollRight").click(function() {
             if (tree.style.left != Math.round((window.innerWidth - 300) / 100) * 100 + "px") {
                 $("#tree").animate({
@@ -41,7 +41,7 @@
             }
 
         });
-
+        //shifts over item to left
         $("#btnRollLeft").click(function() {
 
 
@@ -58,21 +58,14 @@
 
 
         });
+        //fade in 
         $("#btnFadeOut").click(function() {
             $("#tree").fadeOut(2000)
         });
+        //fade in out
         $("#btnFadeIn").click(function() {
             $("#tree").fadeIn(2000)
         });
-
-
-        //let tree = $("#tree").show();
-
-        // function rollRight() {
-        //     $("#tree").animate({
-        //         "right": "200px"
-        //     });
-        // }
     </script>
 </body>
 
