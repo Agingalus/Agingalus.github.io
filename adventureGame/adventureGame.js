@@ -147,7 +147,7 @@ function changeRoom() {
         }
     }
     document.forms["form1"].reset();
-};
+}
 
 
 // validates the guesses of the user
@@ -363,7 +363,7 @@ let takePassage = () => {
         gameMessage.textContent = errorMessages[6];
     }
     displayRoom();
-}
+};
 
 // adds the item in the room to the array backPack
 function takeItem() {
