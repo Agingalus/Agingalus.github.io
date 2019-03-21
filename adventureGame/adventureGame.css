@@ -73,3 +73,7 @@ footer {
 #wrong {
     display: none;
 }
+
+#image {
+    overflow: visible;
+}

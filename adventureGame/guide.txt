@@ -16,9 +16,13 @@ north
 north
 unlock door(with key you have)
 talk
-play flute
+play flute(plays sound)
 talk 
 then hit solve the muder
 Mr. green with the Revolver in the Billard Room
 
+
+optional
+you can also go to  libray and conservitory and pick up items that 
+you will need to give to plum an scarlet to get there clue.
 you can also talk to all of the other people to help get clues of who the muderer is
