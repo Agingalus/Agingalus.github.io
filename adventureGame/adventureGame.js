@@ -173,6 +173,7 @@ function displayRoom() {
     printClue.textContent = "";
 }
 
+
 // used in html for onchange
 // eslint-disable-next-line no-unused-vars
 function getValue() {
